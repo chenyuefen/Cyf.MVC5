@@ -32,6 +32,15 @@ namespace Cyf.MVC5.Controllers
     ///  方法Action
     ///  M--Models  数据传递模型，普通的实体
     /// 
+    /// ************  为什么有MVC还要使用Webapi  **************
+    /// WebApi是返回数据的，为啥不都用MVC算了
+    /// 其实不管是aspx/ashx/webapi/mvc,都是使用Http协议
+    /// 所以一切的请求都可以实现的！ 
+    /// Aspx：属于比较重的，默认有页面的生命周期---前后融合，viewstate---跟cs是一一对应
+    /// Ashx: 属于轻量级的，没有页面的概念
+    /// MVC：前后分离的，C可以任意指定视图，可以一套后台多套UI
+    /// WepApi:专人做专事儿，管道都是独立的；RESTful，没有action
+    ///         .net core二者又融合管道了
     /// </summary>
     public class FirstController : Controller
     {
