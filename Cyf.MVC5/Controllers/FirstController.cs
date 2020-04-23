@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
 namespace Cyf.MVC5.Controllers
 {
     /// <summary>
+    /// 
     /// ************  First内容  **************
     /// 1 MVC5：Controller、Action、View
     /// 2 IIS部署，Global、Log4
@@ -34,9 +36,70 @@ namespace Cyf.MVC5.Controllers
     public class FirstController : Controller
     {
         // GET: First
+        /// <summary>
+        /// 在此右键添加视图，会在View下自动生成视图文件
+        /// </summary>
+        /// <returns></returns>
         public ActionResult Index()
         {
             return View();
+        }
+
+        /// <summary>
+        /// /First/IndexId/4 id是路由解析出来的，只有id参数可以这样
+        /// /First/IndexId?id=3 url地址传递参数
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public ActionResult IndexId(int id)
+        {
+            //各种的数据库增删改查
+            return View();
+        }
+
+
+
+        public ViewResult IndexIdNull(int? id)
+        {
+            return View();
+        }
+
+        /// <summary>
+        /// string可以为空
+        /// https://localhost:44337/First/stringname?name=小白
+        /// </summary>
+        public string StringName(string name)
+        {
+            return $"This is {name}";
+        }
+
+        /// <summary>
+        /// 返回Json格式
+        /// </summary>
+        public string StringJson(string name)
+        {
+            return Newtonsoft.Json.JsonConvert.SerializeObject(new
+            {
+                Id = 123,
+                Name = name
+            });
+        }
+
+        /// <summary>
+        /// 返回Json格式
+        /// </summary>
+        public JsonResult Json(int id, string name, string remark)
+        {
+            return new JsonResult()
+            {
+                Data = new
+                {
+                    Id = id,
+                    Name = name ?? "X",
+                    Remark = remark ?? "这里是默认的"
+                },
+                JsonRequestBehavior = JsonRequestBehavior.AllowGet//否则会被浏览器拦截
+            };
         }
     }
 }
