@@ -55,6 +55,10 @@ namespace Cyf.MVC5.Controllers
     /// ************  模板页  **************
     /// masterpage--layout  默认是_layout（\Views\Shared\_Layout.cshtml）  可以自行指定
     /// 
+    /// ************  Global全局式  **************
+    /// Global.asax--全局式 
+    /// Application_Start 全局启动时执行，且只执行一次，非常适合做初始化---也可以静态构造函数
+    /// 
     /// </summary>
     public class FirstController : Controller
     {
