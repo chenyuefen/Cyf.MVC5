@@ -49,6 +49,12 @@ namespace Cyf.MVC5.Controllers
     /// 【model】--适合复杂数据的传递,强类型
     /// 【TempData】--临时数据，可以跨action后台传递，存在session里面，用一次就清理掉
     ///         
+    /// ************  视图配置文件  **************
+    /// Views--Web.Config是配置视图文件
+    /// 
+    /// ************  模板页  **************
+    /// masterpage--layout  默认是_layout（\Views\Shared\_Layout.cshtml）  可以自行指定
+    /// 
     /// </summary>
     public class FirstController : Controller
     {

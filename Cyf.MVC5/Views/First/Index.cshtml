@@ -3,12 +3,11 @@
 @*Model传值*@
 @model CurrentUser
 @{
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = null;
     ViewBag.Title = "First Index";
     CurrentUser userData = (CurrentUser)ViewData["CurrentUserViewData"];
     CurrentUser tempData = (CurrentUser)TempData["CurrentUserTempData"];
-    string text = "小巨蛋";
-    //Layout = "~/Views/Shared/_Layout.cshtml";
-    Layout = null;
 }
 
 <h2>Index First</h2>
@@ -25,8 +24,4 @@
 <h3>TempData.CurrentUserViewData:  @(((CurrentUser)TempData["CurrentUserTempData"]).Name) </h3>
 <h3>TempData.userData:  @tempData.Name </h3>
 
-
-
 <h3>model.Name: @Model.Name</h3>
-
-
