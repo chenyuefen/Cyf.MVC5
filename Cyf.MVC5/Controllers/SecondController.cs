@@ -6,12 +6,27 @@ using System.Web.Mvc;
 
 namespace Cyf.MVC5.Controllers
 {
+    /// <summary>
+    /// ************  Second内容  **************
+    /// 1 Route使用和扩展，Area
+    /// 2 Razor语法，前后端语法混编
+    /// 3 Html扩展控件，后端封装前端
+    /// 4 模板页Layout,局部页PartialView 
+    /// 5 IOC和MVC的结合，工厂的创建和Bussiness初始化
+    /// 
+    /// ************  Route路由使用和扩展  **************
+    /// MvcApplication--Application_Start--RegisterRoutes--给RouteCollection添加规则
+    /// 请求进到网站--X--请求地址被路由按顺序匹配--遇到一个吻合的结束---就到对应的控制器和action
+    /// 
+    /// 
+    /// 
+    /// </summary>
     public class SecondController : Controller
     {
         // GET: Second
         public ActionResult Index()
         {
-            return View();
+            return View();            
         }
 
         public string String()
