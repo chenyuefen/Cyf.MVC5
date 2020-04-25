@@ -56,13 +56,20 @@ namespace Cyf.MVC5.Controllers
     ///   @RenderSection("scripts", required: false)
     ///   
     /// 
-    /// ************  【PartialPage】局部页详解  **************
+    /// ************  【PartialPage】局部页详解【没有Action】  **************
     ///  PartialPage局部页---相当于Webform的ascx控件,是没有自己的ACTION
     ///  两种实现语法：（一样的）
     ///  @{ Html.RenderPartial("PartialPage", "这里是传给Html.RenderPartial的model参数"); }
     ///  @Html.Partial("PartialPage", "这里是传给Html.RenderPartial的model参数")
     ///  
     /// 
+    /// 
+    /// ************  【Action】子请求/子页面【带Action】  **************
+    /// @Html.Action("ChildAction", "Second", new { name = "Html.Action" })
+    /// @{Html.RenderAction("ChildAction", "Second", new { name = "Html.RenderAction" });}
+    /// 有action,也可以传参数
+    /// [ChildActionOnly]//只能被子请求访问  不能独立访问
+    /// 把Layout设置为null
     /// </summary>
     public class SecondController : Controller
     {
@@ -84,6 +91,13 @@ namespace Cyf.MVC5.Controllers
 
         public ViewResult RazorExtend()
         {
+            return View();
+        }
+
+        [ChildActionOnly]//只能被子请求访问  不能独立访问
+        public ViewResult ChildAction(string name)
+        {
+            base.ViewBag.Name = name;
             return View();
         }
     }

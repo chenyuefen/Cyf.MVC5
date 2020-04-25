@@ -48,6 +48,17 @@
 @Html.Partial("PartialPage", "这个是传给Partial的model参数")
 
 
+<!--使用Action页-->
+<br />
+<p>Html.Action 返回的是字符串，放入当前位置,需要经过action的处理</p>
+@Html.Action("ChildAction", "Second", new { name = "这个是Name参数：Html.Action" })
+
+<br />
+<p>Html.RenderAction 在指定位置添加一个view，返回void 需要放入大括号,需要经过action的处理</p>
+@{Html.RenderAction("ChildAction", "Second", new { name = "这个是Name参数：Html.RenderAction" });}
+
+
+
 <!--这种传值是页面一次请求完成的，跟ajax不一样-->
 @*<input id="hidTitle" type="hidden" value="@ViewBag.Title" />
     <script>
