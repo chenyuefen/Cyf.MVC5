@@ -179,6 +179,7 @@
     <Content Include="Views\First\Index.cshtml" />
     <Content Include="Views\First\IndexId.cshtml" />
     <Content Include="Views\First\IndexIdNull.cshtml" />
+    <Content Include="Views\Plugins\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -197,6 +198,12 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Cyf.MVC5.Plugins\Cyf.MVC5.Plugins.csproj">
+      <Project>{98536b61-7473-4e4f-95fa-64c90ebbea95}</Project>
+      <Name>Cyf.MVC5.Plugins</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
