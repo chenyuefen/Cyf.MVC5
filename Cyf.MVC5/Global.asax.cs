@@ -15,9 +15,9 @@ namespace Cyf.MVC5
 
         protected void Application_Start()
         {
-            AreaRegistration.RegisterAllAreas();
-            FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
-            RouteConfig.RegisterRoutes(RouteTable.Routes);
+            AreaRegistration.RegisterAllAreas();//注册全部区域，扫描一遍
+            FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);//注册
+            RouteConfig.RegisterRoutes(RouteTable.Routes);//注册路由
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             this.logger.Info("网站启动了。。。");
         }

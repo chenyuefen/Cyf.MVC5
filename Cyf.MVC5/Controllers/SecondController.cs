@@ -14,10 +14,17 @@ namespace Cyf.MVC5.Controllers
     /// 4 模板页Layout,局部页PartialView 
     /// 5 IOC和MVC的结合，工厂的创建和Bussiness初始化
     /// 
+    /// 
     /// ************  Route路由使用和扩展  **************
     /// MvcApplication--Application_Start--RegisterRoutes--给RouteCollection添加规则
     /// 请求进到网站--X--请求地址被路由按顺序匹配--遇到一个吻合的结束---就到对应的控制器和action
     /// 
+    /// 
+    /// ************  Area区域：为了拆分项目  **************
+    /// 因为一个Web项目可以非常大非常复杂，多人合作开发，命名就成问题了，Area可以把项目拆分开，方便团队合作；演变到后面可以做成插件式开发：
+    /// MvcApplication--Application_Start--AreaRegistration.RegisterAllAreas()
+    /// 其实就是把SystemAreaRegistration给注册下---添加URL地址规则
+    /// 请求来了就匹配(area在普通的之前)
     /// 
     /// 
     /// </summary>
