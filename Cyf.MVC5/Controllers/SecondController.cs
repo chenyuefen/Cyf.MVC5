@@ -38,6 +38,13 @@ namespace Cyf.MVC5.Controllers
     /// 写后台代码：行内--单行--多行--关键字
     /// 后台代码写html：@:   闭合的html标签  <text></text>
     /// 
+    /// 
+    /// ************  Html扩展控件  **************
+    /// Html扩展控件：封装个方法，自动生成html
+    ///               后端一次性完成全部内容，而且html标签闭合
+    ///               我们还可以自行封装这种扩展方法
+    ///     但是这个已经不流行了，就是UI改动需要重新发布
+    ///     更多应该是前后分离，写前端的人是不会懂后端的写法
     /// </summary>
     public class SecondController : Controller
     {
@@ -55,6 +62,11 @@ namespace Cyf.MVC5.Controllers
         public string Time(int year, int month, int day)
         {
             return $"当前传入日期：{year}-{month}-{day}";
+        }
+
+        public ViewResult RazorExtend()
+        {
+            return View();
         }
     }
 }
