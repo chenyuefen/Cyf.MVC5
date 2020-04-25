@@ -36,6 +36,18 @@
 }
 <br />
 
+
+<!--使用partial页-->
+<p>等于webform的ascx</p>
+<p>Html.RenderPartial 在指定位置添加一个view，返回void 需要放入大括号 </p>
+<!--单行模式，加大括号-->
+@{ Html.RenderPartial("PartialPage", "这个是传给Partial的model参数"); }
+<br />
+<p>Html.Partial 返回的是字符串，放入当前位置</p>
+<!--多行模式，直接写-->
+@Html.Partial("PartialPage", "这个是传给Partial的model参数")
+
+
 <!--这种传值是页面一次请求完成的，跟ajax不一样-->
 @*<input id="hidTitle" type="hidden" value="@ViewBag.Title" />
     <script>

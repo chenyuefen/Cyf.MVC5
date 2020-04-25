@@ -15,12 +15,12 @@ namespace Cyf.MVC5.Controllers
     /// 5 IOC和MVC的结合，工厂的创建和Bussiness初始化
     /// 
     /// 
-    /// ************  Route路由使用和扩展  **************
+    /// ************  【Route】路由使用和扩展  **************
     /// MvcApplication--Application_Start--RegisterRoutes--给RouteCollection添加规则
     /// 请求进到网站--X--请求地址被路由按顺序匹配--遇到一个吻合的结束---就到对应的控制器和action
     /// 
     /// 
-    /// ************  Area区域：为了拆分项目【插件式开发】  **************
+    /// ************  【Area】区域：为了拆分项目【插件式开发】  **************
     /// 因为一个Web项目可以非常大非常复杂，多人合作开发，命名就成问题了，Area可以把项目拆分开，方便团队合作；演变到后面可以做成插件式开发：
     /// MvcApplication--Application_Start--AreaRegistration.RegisterAllAreas()
     /// 其实就是把SystemAreaRegistration给注册下---添加URL地址规则
@@ -33,13 +33,13 @@ namespace Cyf.MVC5.Controllers
     /// b Area也可以独立开，规则是必须有个继承AreaRegistration
     /// 
     /// 
-    /// ************  Razor基本语法  **************
+    /// ************  【Razor】基本语法  **************
     /// Razor语法：cshtml本质是一个类文件，混编了html+cs代码
     /// 写后台代码：行内--单行--多行--关键字
     /// 后台代码写html：@:   闭合的html标签  <text></text>
     /// 
     /// 
-    /// ************  Html扩展控件  **************
+    /// ************  【Html】扩展控件  **************
     /// Html扩展控件：封装个方法，自动生成html
     ///               后端一次性完成全部内容，而且html标签闭合
     ///               我们还可以自行封装这种扩展方法
@@ -48,12 +48,21 @@ namespace Cyf.MVC5.Controllers
     ///     
     /// 
     /// 
-    /// ************  Layout母版页详解  **************
+    /// ************  【Layout】母版页详解  **************
     ///   Masterpage--layout  默认是_layout  可以自行指定
     ///   @Styles.Render("~/Content/css") 使用样式包
     ///   @Scripts.Render("~/bundles/modernizr") 使用js包
     ///   @RenderBody() 就是页面的结合点
     ///   @RenderSection("scripts", required: false)
+    ///   
+    /// 
+    /// ************  【PartialPage】局部页详解  **************
+    ///  PartialPage局部页---相当于Webform的ascx控件,是没有自己的ACTION
+    ///  两种实现语法：（一样的）
+    ///  @{ Html.RenderPartial("PartialPage", "这里是传给Html.RenderPartial的model参数"); }
+    ///  @Html.Partial("PartialPage", "这里是传给Html.RenderPartial的model参数")
+    ///  
+    /// 
     /// </summary>
     public class SecondController : Controller
     {
