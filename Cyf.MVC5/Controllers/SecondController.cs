@@ -31,6 +31,13 @@ namespace Cyf.MVC5.Controllers
     /// 
     /// a 控制器类可以出现在MVC项目之外，唯一的规则就是继承自Controller
     /// b Area也可以独立开，规则是必须有个继承AreaRegistration
+    /// 
+    /// 
+    /// ************  Razor基本语法  **************
+    /// Razor语法：cshtml本质是一个类文件，混编了html+cs代码
+    /// 写后台代码：行内--单行--多行--关键字
+    /// 后台代码写html：@:   闭合的html标签  <text></text>
+    /// 
     /// </summary>
     public class SecondController : Controller
     {

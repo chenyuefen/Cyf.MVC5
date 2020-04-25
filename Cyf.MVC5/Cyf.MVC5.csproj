@@ -180,11 +180,11 @@
     <Content Include="Views\First\IndexId.cshtml" />
     <Content Include="Views\First\IndexIdNull.cshtml" />
     <Content Include="Views\Plugins\Index.cshtml" />
+    <Content Include="Views\Second\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\System\Data\" />
-    <Folder Include="Views\Second\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
