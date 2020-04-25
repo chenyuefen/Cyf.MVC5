@@ -45,6 +45,15 @@ namespace Cyf.MVC5.Controllers
     ///               我们还可以自行封装这种扩展方法
     ///     但是这个已经不流行了，就是UI改动需要重新发布
     ///     更多应该是前后分离，写前端的人是不会懂后端的写法
+    ///     
+    /// 
+    /// 
+    /// ************  Layout母版页详解  **************
+    ///   Masterpage--layout  默认是_layout  可以自行指定
+    ///   @Styles.Render("~/Content/css") 使用样式包
+    ///   @Scripts.Render("~/bundles/modernizr") 使用js包
+    ///   @RenderBody() 就是页面的结合点
+    ///   @RenderSection("scripts", required: false)
     /// </summary>
     public class SecondController : Controller
     {

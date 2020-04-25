@@ -1,11 +1,11 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - 我的 ASP.NET 应用程序</title>
-    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/css")        @*【使用样式包】这个在BundleConfig里面打包的多个依赖项*@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
@@ -29,15 +29,15 @@
         </div>
     </div>
     <div class="container body-content">
-        @RenderBody()
+        @RenderBody()   @*【页面的结合点】子页面都将填充在此*@
         <hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - 我的 ASP.NET 应用程序</p>
         </footer>
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jquery")         @*【使用js包】这个在BundleConfig里面打包的多个依赖项*@
     @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+    @RenderSection("scripts", required: false)  @*【将RenderBody()中的scripts标签插入到这里】name:标签名，required:所有子标签是否都必须有这个*@
 </body>
 </html>
