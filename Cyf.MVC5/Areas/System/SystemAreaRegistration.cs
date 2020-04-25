@@ -10,7 +10,7 @@ namespace Cyf.MVC5.Areas.System
     /// </summary>
     public class SystemAreaRegistration : AreaRegistration 
     {
-        public override string AreaName 
+        public override string AreaName
         {
             get 
             {
@@ -23,7 +23,9 @@ namespace Cyf.MVC5.Areas.System
             context.MapRoute(
                 "System_default",
                 "System/{controller}/{action}/{id}",
-                new { action = "Index", id = UrlParameter.Optional }
+                new { action = "Index", id = UrlParameter.Optional },
+                namespaces: new string[] { "Cyf.MVC5.Areas.System.Controllers" }
+                //增加区域后需要指定命名空间
             );
         }
     }

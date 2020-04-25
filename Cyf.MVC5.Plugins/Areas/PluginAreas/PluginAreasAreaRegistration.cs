@@ -17,7 +17,9 @@ namespace Cyf.MVC5.Plugins.Areas.PluginAreas
             context.MapRoute(
                 "PluginAreas_default",
                 "PluginAreas/{controller}/{action}/{id}",
-                new { action = "Index", id = UrlParameter.Optional }
+                new { action = "Index", id = UrlParameter.Optional },
+                namespaces: new string[] { "Cyf.MVC5.Plugins.Areas.PluginAreas.Controllers" }
+                //增加区域后需要指定命名空间
             );
         }
     }

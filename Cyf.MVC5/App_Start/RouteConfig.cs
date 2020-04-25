@@ -51,8 +51,10 @@ namespace Cyf.MVC5
             routes.MapRoute(
                 name: "Default",//路由名称，RouteCollection是key-value，key 避免重复
                 url: "{controller}/{action}/{id}",//正则规则：两个斜线 3个变量
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
                 //默认值 没有id变量 就是UrlParameter.Optional  没有action就是index  没有controller是home
+                namespaces: new string[] { "Cyf.MVC5.Controllers"}
+                //增加区域后需要指定命名空间
             );
 
         }
