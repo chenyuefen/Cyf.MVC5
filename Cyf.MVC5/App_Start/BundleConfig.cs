@@ -8,6 +8,7 @@ namespace Cyf.MVC5
         // 有关捆绑的详细信息，请访问 https://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
+            //将依赖文件打包，只需要写一个~/bundles/jquery，就可以将~/Scripts/jquery-{version}.js全部一起依赖进去
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
 
@@ -22,6 +23,7 @@ namespace Cyf.MVC5
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js"));
 
+            //再比如这个：依赖~/Content/css，相当于依赖~/Content/bootstrap.css+~/Content/site.css
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
