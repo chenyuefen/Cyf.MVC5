@@ -284,6 +284,10 @@
       <Project>{7e2c34d2-7199-4f47-96f3-4a22f4d3f437}</Project>
       <Name>Cyf.EntityFramework.Model</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Cyf.Framework\Cyf.Framework.csproj">
+      <Project>{f3d3ff1e-4242-402b-8e64-03b082a80e29}</Project>
+      <Name>Cyf.Framework</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Cyf.MVC5.Plugins\Cyf.MVC5.Plugins.csproj">
       <Project>{98536b61-7473-4e4f-95fa-64c90ebbea95}</Project>
       <Name>Cyf.MVC5.Plugins</Name>

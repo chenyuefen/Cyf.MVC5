@@ -1,7 +1,7 @@
 ﻿@using Cyf.EntityFramework.Model;
 @using PagedList.Mvc;
 @using PagedList;
-@model IEnumerable<Employee>
+@model StaticPagedList<Employee>
 
 @{
     ViewBag.Title = "Index";
@@ -49,5 +49,10 @@
             }
         </table>
         @Html.Br()
+        Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+        @*@Html.PagedListPager(Model, pageIndex => Url.Action("Index",
+        new { pageIndex, searchString = ViewBag.SearchString,lastOrderBy = ViewBag.OrderBy}))*@
+        @Html.PagedListPager(Model, pageIndex => $"/Fourth/Index?pageIndex={pageIndex}&searchString={base.ViewBag.SearchString}&url={base.ViewBag.Url}")
+
     </div>
 }
