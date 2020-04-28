@@ -75,8 +75,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\company.cs" />
-    <Compile Include="Models\employee.cs" />
+    <Compile Include="Models\Company.cs" />
+    <Compile Include="Models\Employee.cs" />
     <Compile Include="CyfDBContext.cs" />
     <Compile Include="PageResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

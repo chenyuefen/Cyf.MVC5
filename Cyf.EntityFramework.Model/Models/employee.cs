@@ -7,7 +7,7 @@ namespace Cyf.EntityFramework.Model
     using System.Data.Entity.Spatial;
 
     [Table("cyf_datas.employee")]
-    public partial class employee
+    public partial class Employee
     {
         public int id { get; set; }
 

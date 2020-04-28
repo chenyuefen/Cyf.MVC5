@@ -56,7 +56,7 @@ namespace Cyf.MVC5.Controllers
             //CyfDBContext context= new CyfDBContext();
             //IUserService iuser = new UserService(context);
             //var user = iuser.Find<employee>(1);
-            var user = _iUserService.Find<employee>(1);
+            var user = _iUserService.Find<Employee>(1);
             return View();
         }
     }

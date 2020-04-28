@@ -1,0 +1,53 @@
+﻿@using Cyf.EntityFramework.Model;
+@using PagedList.Mvc;
+@using PagedList;
+@model IEnumerable<Employee>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@using (Html.BeginForm("Index", "Fourth"))
+{
+    <p>
+        Find by Condition:
+        @Html.TextBox("searchString", ViewBag.SearchString as string, new { @class = "form-control", @Style = "display:inline" })
+        @Html.TextBox("url", ViewBag.Url as string, new { @class = "form-control", @Style = "display:inline" })
+        @Html.Submit("查询")
+    </p>
+    <div id="partialajaxlist">
+        <table class="table">
+            <tr>
+                <th>Id</th>
+                <th>姓名</th>
+                <th>@Html.ActionLink("职位", "Index", new { orderBy = ViewBag.OrderBy, searchString = ViewBag.SearchString, page = 1 })</th>
+                <th>Url</th>
+                <th>Action</th>
+                <th>图片</th>
+            </tr>
+            @*前后混编，前后分离 MVVM vue *@
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @*@item.Id*@
+                        @Html.DisplayFor(modelItem => item.id)@*//强类型 可以展示display*@
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.position)
+                    </td>
+                    <td>
+                        <a href="/Fourth/Details/@item.id">Details</a>|
+                        @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.id }) |
+                        <a id="@item.id" href="javascript:void(0);" onclick="ajaxDelete(this)">ajaxDelete</a>
+                    </td>
+                </tr>
+            }
+        </table>
+        @Html.Br()
+    </div>
+}

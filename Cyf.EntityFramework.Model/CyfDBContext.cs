@@ -12,24 +12,24 @@ namespace Cyf.EntityFramework.Model
         {
         }
 
-        public virtual DbSet<company> companies { get; set; }
-        public virtual DbSet<employee> employees { get; set; }
+        public virtual DbSet<Company> companies { get; set; }
+        public virtual DbSet<Employee> employees { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<company>()
+            modelBuilder.Entity<Company>()
                 .Property(e => e.company_name)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<company>()
+            modelBuilder.Entity<Company>()
                 .Property(e => e.company_position)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<employee>()
+            modelBuilder.Entity<Employee>()
                 .Property(e => e.name)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<employee>()
+            modelBuilder.Entity<Employee>()
                 .Property(e => e.position)
                 .IsUnicode(false);
         }

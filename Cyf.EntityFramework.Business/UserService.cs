@@ -15,9 +15,9 @@ namespace Cyf.EntityFramework.Business
         {
         }
 
-        public void UpdateLastLogin(employee user)
+        public void UpdateLastLogin(Employee user)
         {
-            employee userDB = base.Find<employee>(user.id);
+            Employee userDB = base.Find<Employee>(user.id);
             //userDB.LastLoginTime = DateTime.Now;
             this.Commit();
         }
