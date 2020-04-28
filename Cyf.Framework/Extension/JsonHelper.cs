@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Web.Script.Serialization;
 using Newtonsoft.Json;
 
-namespace Ruanmou.Framework.Extension
+namespace Cyf.Framework.Extension
 {
     public class JsonHelper
     {

@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Web;
 
-namespace Ruanmou.Web.Core.PipeLine
+namespace Cyf.Web.Core.PipeLine
 {
     public class BaseModule : IHttpModule
     {

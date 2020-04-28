@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 
-namespace Ruanmou.Web.Core.PipeLine
+namespace Cyf.Web.Core.PipeLine
 {
     /// <summary>
     /// 注册handlerfactory

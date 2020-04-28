@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Configuration;
 
-namespace Ruanmou.Framework
+namespace Cyf.Framework
 {
     public class StaticConstant
     {

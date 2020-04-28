@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Ruanmou.Web.Core.Extension
+namespace Cyf.Web.Core.Extension
 {
     /// <summary>
     /// razor视图引擎扩展

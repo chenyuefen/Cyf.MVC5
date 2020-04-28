@@ -1,5 +1,5 @@
-﻿using Ruanmou.Framework.Log;
-using Ruanmou.Web.Core.Models;
+﻿using Cyf.Framework.Log;
+using Cyf.Web.Core.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace Ruanmou.Web.Core.Filter
+namespace Cyf.Web.Core.Filter
 {
     /// <summary>
     /// http://www.cnblogs.com/Showshare/p/exception-handle-with-mvcfilter.html

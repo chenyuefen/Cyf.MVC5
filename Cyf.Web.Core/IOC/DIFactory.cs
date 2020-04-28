@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Unity;
 
-namespace Ruanmou.Web.Core.IOC
+namespace Cyf.Web.Core.IOC
 {
     /// <summary>
     /// 依赖注入工厂

@@ -1,4 +1,4 @@
-﻿using Ruanmou.Framework.Extension;
+﻿using Cyf.Framework.Extension;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Xml.Serialization;
 
-namespace Ruanmou.Web.Core.Extension
+namespace Cyf.Web.Core.Extension
 {
     /// <summary>
     /// 自定义扩展json格式result

@@ -1,4 +1,4 @@
-namespace Ruanmou.Framework.Caching
+namespace Cyf.Framework.Caching
 {
     /// <summary>
     /// Cache manager interface

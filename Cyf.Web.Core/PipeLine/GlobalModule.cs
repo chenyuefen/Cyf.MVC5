@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Web;
 
-namespace Ruanmou.Web.Core.PipeLine
+namespace Cyf.Web.Core.PipeLine
 {
     /// <summary>
     /// 在每处理一个Http请求时，应用程序事件都会触发一遍，但是Application_Start和 Application_End 例外，它仅在第一个资源文件被访问时被触发。

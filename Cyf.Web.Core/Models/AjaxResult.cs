@@ -1,4 +1,4 @@
-﻿namespace Ruanmou.Web.Core.Models
+﻿namespace Cyf.Web.Core.Models
 {
     public class AjaxResult
     {

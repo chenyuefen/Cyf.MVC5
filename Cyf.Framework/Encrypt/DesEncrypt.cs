@@ -6,7 +6,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ruanmou.Framework.Encrypt
+namespace Cyf.Framework.Encrypt
 {
     /// <summary>
     /// 可逆对称加密  密钥长度8

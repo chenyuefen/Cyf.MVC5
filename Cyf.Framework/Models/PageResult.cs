@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ruanmou.Framework.Models
+namespace Cyf.Framework.Models
 {
     public class PageResult<T>
     {

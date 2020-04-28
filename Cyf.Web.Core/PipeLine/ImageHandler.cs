@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Web;
 
-namespace Ruanmou.Web.Core.PipeLine
+namespace Cyf.Web.Core.PipeLine
 {
     /// <summary>
     /// 防盗链

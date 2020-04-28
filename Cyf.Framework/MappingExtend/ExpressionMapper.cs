@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ruanmou.Framework.MappingExtend
+namespace Cyf.Framework.MappingExtend
 {
     /// <summary>
     /// 生成表达式目录树 缓存

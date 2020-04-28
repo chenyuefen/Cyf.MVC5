@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ruanmou.Framework.Caching
+namespace Cyf.Framework.Caching
 {
     public class HashtableCache:ICache
     {

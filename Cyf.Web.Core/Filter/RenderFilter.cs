@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Ruanmou.Web.Core.Filter
+namespace Cyf.Web.Core.Filter
 {
     [AttributeUsage(AttributeTargets.Method)]
     public class RenderFilter : ActionFilterAttribute

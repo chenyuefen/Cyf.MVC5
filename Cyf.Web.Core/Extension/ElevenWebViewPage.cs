@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 
-namespace Ruanmou.Web.Core.Extension
+namespace Cyf.Web.Core.Extension
 {
     public class ElevenWebViewPage<TModel> : WebViewPage<TModel>
     {

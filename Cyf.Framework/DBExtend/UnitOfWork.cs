@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Transactions;//System.Transactions 引用
 
-namespace Ruanmou.Framework.DBExtend
+namespace Cyf.Framework.DBExtend
 {
     public class UnitOfWork : IUnitOfWork
     {

@@ -1,4 +1,4 @@
-﻿using Ruanmou.Web.Core.Models;
+﻿using Cyf.Web.Core.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace Ruanmou.Web.Core.Filter
+namespace Cyf.Web.Core.Filter
 {
     /// <summary>
     /// ajax跟exception一致

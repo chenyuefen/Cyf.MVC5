@@ -6,7 +6,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Web;
 
-namespace Ruanmou.Web.Core.Extension
+namespace Cyf.Web.Core.Extension
 {
     public static class HttpExtension
     {

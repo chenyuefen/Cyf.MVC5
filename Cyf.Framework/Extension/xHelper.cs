@@ -18,7 +18,7 @@ using System.Reflection;
 using System.Data;
 using System.Collections.Generic;
 
-namespace Ruanmou.Framework.Extension
+namespace Cyf.Framework.Extension
 {
     public static class xHelper
     {

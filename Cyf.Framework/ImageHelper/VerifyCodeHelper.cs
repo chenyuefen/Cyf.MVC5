@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Web;
 
-namespace Ruanmou.Framework.ImageHelper
+namespace Cyf.Framework.ImageHelper
 {
     public class VerifyCodeHelper
     {

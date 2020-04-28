@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 
-namespace Ruanmou.Framework.Extension
+namespace Cyf.Framework.Extension
 {
     public class XmlHelper
     {

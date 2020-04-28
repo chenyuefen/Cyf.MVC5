@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Xml.Serialization;
 
-namespace Ruanmou.Web.Core.Extension
+namespace Cyf.Web.Core.Extension
 {
     /// <summary>
     /// 自定义扩展XML格式result

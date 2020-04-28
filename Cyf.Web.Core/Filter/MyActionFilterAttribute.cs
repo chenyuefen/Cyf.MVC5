@@ -5,7 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Ruanmou.Web.Core.Filter
+namespace Cyf.Web.Core.Filter
 {
 
     public class MyActionFilterAttribute : ActionFilterAttribute

@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace Ruanmou.Web.Core.Models
+namespace Cyf.Web.Core.Models
 {
     public class CurrentUser
     {

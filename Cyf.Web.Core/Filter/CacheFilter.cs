@@ -2,7 +2,7 @@
 using System.Web;
 using System.Web.Mvc;
 
-namespace Ruanmou.Web.Core.Filter
+namespace Cyf.Web.Core.Filter
 {
     /// <summary>
     /// http://weblogs.asp.net/rashid/asp-net-mvc-action-filter-caching-and-compression

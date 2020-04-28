@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ruanmou.Framework.MappingExtend
+namespace Cyf.Framework.MappingExtend
 {
     public class ReflectionMapper
     {

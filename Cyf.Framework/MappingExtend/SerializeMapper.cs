@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ruanmou.Framework.MappingExtend
+namespace Cyf.Framework.MappingExtend
 {
     /// <summary>
     /// 使用第三方序列化反序列化工具

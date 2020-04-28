@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Ruanmou.Framework.Caching
+namespace Cyf.Framework.Caching
 {
     public class CacheManager
     {

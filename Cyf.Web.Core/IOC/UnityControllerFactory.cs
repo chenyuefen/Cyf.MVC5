@@ -7,7 +7,7 @@ using System.Web.Mvc;
 using System.Web.Routing;
 using Unity;
 
-namespace Ruanmou.Web.Core.IOC
+namespace Cyf.Web.Core.IOC
 {
     /// <summary>
     /// 自定义的控制器实例化工厂

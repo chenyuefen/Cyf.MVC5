@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.Caching;
 using System.Text.RegularExpressions;
 
-namespace Ruanmou.Framework.Caching
+namespace Cyf.Framework.Caching
 {
     /// <summary>
     /// Represents a MemoryCacheCache

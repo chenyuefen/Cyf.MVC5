@@ -1,11 +1,11 @@
-﻿using Ruanmou.Framework.Log;
+﻿using Cyf.Framework.Log;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text;
 
-namespace Ruanmou.Framework.Extension
+namespace Cyf.Framework.Extension
 {
     public static class EnumExtension
     {
