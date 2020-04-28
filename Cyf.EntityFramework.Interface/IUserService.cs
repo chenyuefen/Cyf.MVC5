@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cyf.EntityFramework.Business
+namespace Cyf.EntityFramework.Interface
 {
     public interface IUserService:IBaseService
     {

@@ -1,4 +1,5 @@
-﻿using Cyf.EntityFramework.Model;
+﻿using Cyf.EntityFramework.Interface;
+using Cyf.EntityFramework.Model;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;

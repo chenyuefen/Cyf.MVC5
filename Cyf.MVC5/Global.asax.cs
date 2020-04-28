@@ -19,6 +19,9 @@ namespace Cyf.MVC5
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);//注册
             RouteConfig.RegisterRoutes(RouteTable.Routes);//注册路由
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            ControllerBuilder.Current.SetControllerFactory(new ControllerFactory());//注册自定义IOC工厂
+
             this.logger.Info("网站启动了。。。");
         }
     }

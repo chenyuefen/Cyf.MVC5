@@ -7,7 +7,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cyf.EntityFramework.Business
+namespace Cyf.EntityFramework.Interface
 {
     public interface IBaseService : IDisposable//是为了释放Context
     {
