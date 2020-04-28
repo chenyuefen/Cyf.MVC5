@@ -9,20 +9,32 @@ using Unity;
 
 namespace Cyf.MVC5.Utility
 {
+    /// <summary>
+    /// 保证这个容器只初始化一次
+    /// </summary>
     public class DIFactory
     {
+        private static IUnityContainer _Container = null;
+        private readonly static object DIFactoryLock = new object();
         public static IUnityContainer GetContainer()
         {
-            IUnityContainer container = null;
-            //container.RegisterType
-            ExeConfigurationFileMap fileMap = new ExeConfigurationFileMap();
-            fileMap.ExeConfigFilename = Path.Combine(AppDomain.CurrentDomain.BaseDirectory + "CfgFiles\\Unity.Config");
-            Configuration configuration = ConfigurationManager.OpenMappedExeConfiguration(fileMap, ConfigurationUserLevel.None);
-            UnityConfigurationSection section = (UnityConfigurationSection)configuration.GetSection(UnityConfigurationSection.SectionName);
-            container = new UnityContainer();
-            section.Configure(container, "cyfContainer");
-
-            return container;
+            if (_Container == null)
+            {
+                lock (DIFactoryLock)
+                {
+                    if (_Container == null)
+                    {
+                        //container.RegisterType
+                        ExeConfigurationFileMap fileMap = new ExeConfigurationFileMap();
+                        fileMap.ExeConfigFilename = Path.Combine(AppDomain.CurrentDomain.BaseDirectory + "CfgFiles\\Unity.Config");
+                        Configuration configuration = ConfigurationManager.OpenMappedExeConfiguration(fileMap, ConfigurationUserLevel.None);
+                        UnityConfigurationSection section = (UnityConfigurationSection)configuration.GetSection(UnityConfigurationSection.SectionName);
+                        _Container = new UnityContainer();
+                        section.Configure(_Container, "cyfContainer");
+                    }
+                }
+            }
+            return _Container;
         }
     }
 }
