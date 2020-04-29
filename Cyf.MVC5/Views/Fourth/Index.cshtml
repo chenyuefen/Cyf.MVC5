@@ -31,19 +31,19 @@
                 <tr>
                     <td>
                         @*@item.Id*@
-                        @Html.DisplayFor(modelItem => item.id)@*//强类型 可以展示display*@
+                        @Html.DisplayFor(modelItem => item.Id)@*//强类型 可以展示display*@
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.name)
+                        @Html.DisplayFor(modelItem => item.Name)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.position)
+                        @Html.DisplayFor(modelItem => item.Position)
                     </td>
                     <td>
-                        <a href="/Fourth/Details/@item.id">Details</a>|
-                        @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
-                        @Html.ActionLink("Delete", "Delete", new { id = item.id }) |
-                        <a id="@item.id" href="javascript:void(0);" onclick="ajaxDelete(this)">ajaxDelete</a>
+                        <a href="/Fourth/Details/@item.Id">Details</a>|
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Id }) |
+                        <a id="@item.Id" href="javascript:void(0);" onclick="ajaxDelete(this)">ajaxDelete</a>
                     </td>
                 </tr>
             }

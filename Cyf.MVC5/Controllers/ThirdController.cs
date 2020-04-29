@@ -53,6 +53,10 @@ namespace Cyf.MVC5.Controllers
         // GET: Third
         public ActionResult Index()
         {
+            using (CyfDBContext context = new CyfDBContext())
+            {
+                var use = context.employees.ToList();
+            }
             //CyfDBContext context= new CyfDBContext();
             //IUserService iuser = new UserService(context);
             //var user = iuser.Find<employee>(1);

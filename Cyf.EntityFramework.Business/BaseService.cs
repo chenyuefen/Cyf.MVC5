@@ -29,7 +29,16 @@ namespace Cyf.EntityFramework.Business
         #region Query
         public T Find<T>(int id) where T : class
         {
-            return this.Context.Set<T>().Find(id);
+            try
+            {
+                return this.Context.Set<T>().Find(id);
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return default;
         }
 
         /// <summary>
