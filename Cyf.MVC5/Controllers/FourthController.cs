@@ -42,7 +42,7 @@ namespace Cyf.MVC5.Controllers
     /// 
     /// Cyf.Framework：通用的帮助类库，这里面放的是任何一个项目都可能用上的，这个类库可以被任何类库引用，但是自身不引用任何类库；
     /// 只要是我用的东西，都得写在我自己里面；如果必须用到别的类库的东西，可以通过委托传递进来；
-    /// Ruanmou.Web.Core：专门为MVC网站服务的通用的帮助
+    /// Cyf.Web.Core：专门为MVC网站服务的通用的帮助
     /// </summary>
     public class FourthController : Controller
     {
