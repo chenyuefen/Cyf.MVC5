@@ -1,6 +1,9 @@
 ﻿using Cyf.EntityFramework.Interface;
 using Cyf.EntityFramework.Model;
 using Cyf.Framework.ExtendExpression;
+using Cyf.MVC5.Utility;
+using Cyf.Remote.Interface;
+using Unity;
 using PagedList;
 using System;
 using System.Collections.Generic;
@@ -30,15 +33,28 @@ namespace Cyf.MVC5.Controllers
     /// g 分页使用pagedlist---返回数据用StaticPagedList--前端分页url带上参数--接受分页参数
     /// h 分页点击后重置页码数，就是设置表单的action
     /// 
+    /// 
+    /// ************  实现搜索服务  **************
+    /// 接口服务查询，建议封装一下；
+    /// 建议跟数据库查询独立分开；
+    /// 也是接口+实现+model,然后就IOC
+    /// 应用程序的配置文件需要加上服务相关
+    /// 
+    /// Cyf.Framework：通用的帮助类库，这里面放的是任何一个项目都可能用上的，这个类库可以被任何类库引用，但是自身不引用任何类库；
+    /// 只要是我用的东西，都得写在我自己里面；如果必须用到别的类库的东西，可以通过委托传递进来；
+    /// Ruanmou.Web.Core：专门为MVC网站服务的通用的帮助
     /// </summary>
     public class FourthController : Controller
     {
         private IUserService _iUserService = null;
+        private ISearchService _iSearchService = null;
+
         private int pageSize = 2;
 
-        public FourthController(IUserService iUserService)
+        public FourthController(IUserService userService, ISearchService searchService)
         {
-            this._iUserService = iUserService;
+            this._iUserService = userService;
+            this._iSearchService = searchService;
         }
 
         public ActionResult Index(string searchString,int? pageIndex)
@@ -70,6 +86,16 @@ namespace Cyf.MVC5.Controllers
 
 
             return View(pageList);
+        }
+
+        public ActionResult Search()
+        {
+            var result = this._iSearchService.QueryCommodityPage(1, 20, "女人", null, "", "");
+
+
+            ISearchService searchService1 = DIFactory.GetContainer().Resolve<ISearchService>();
+            ISearchService searchService2 = DIFactory.GetContainer().Resolve<ISearchService>("update");
+            return View(result);
         }
     }
 }

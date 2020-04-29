@@ -310,6 +310,10 @@
       <Project>{98536b61-7473-4e4f-95fa-64c90ebbea95}</Project>
       <Name>Cyf.MVC5.Plugins</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Cyf.Remote.Interface\Cyf.Remote.Interface.csproj">
+      <Project>{A483F54F-4A89-4626-A682-4EE0AF8FD204}</Project>
+      <Name>Cyf.Remote.Interface</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />

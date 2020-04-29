@@ -1,5 +1,4 @@
-﻿using Cyf.Framework.Models;
-using Cyf.Remote.Model;
+﻿using Cyf.EntityFramework.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;

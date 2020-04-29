@@ -46,7 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="Connected Services\LuceneSearchService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -88,17 +87,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Cyf.Framework\Cyf.Framework.csproj">
-      <Project>{F3D3FF1E-4242-402B-8E64-03B082A80E29}</Project>
-      <Name>Cyf.Framework</Name>
+    <ProjectReference Include="..\Cyf.EntityFramework.Model\Cyf.EntityFramework.Model.csproj">
+      <Project>{7E2C34D2-7199-4F47-96F3-4A22F4D3F437}</Project>
+      <Name>Cyf.EntityFramework.Model</Name>
     </ProjectReference>
     <ProjectReference Include="..\Cyf.Remote.Interface\Cyf.Remote.Interface.csproj">
       <Project>{A483F54F-4A89-4626-A682-4EE0AF8FD204}</Project>
       <Name>Cyf.Remote.Interface</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Cyf.Remote.Model\Cyf.Remote.Model.csproj">
-      <Project>{35C7A3C1-8B3F-41B1-A59F-D598F0F3F0B0}</Project>
-      <Name>Cyf.Remote.Model</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

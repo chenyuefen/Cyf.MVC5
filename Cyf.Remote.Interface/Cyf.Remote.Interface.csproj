@@ -45,13 +45,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Cyf.Framework\Cyf.Framework.csproj">
-      <Project>{F3D3FF1E-4242-402B-8E64-03B082A80E29}</Project>
-      <Name>Cyf.Framework</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Cyf.Remote.Model\Cyf.Remote.Model.csproj">
-      <Project>{35C7A3C1-8B3F-41B1-A59F-D598F0F3F0B0}</Project>
-      <Name>Cyf.Remote.Model</Name>
+    <ProjectReference Include="..\Cyf.EntityFramework.Model\Cyf.EntityFramework.Model.csproj">
+      <Project>{7E2C34D2-7199-4F47-96F3-4A22F4D3F437}</Project>
+      <Name>Cyf.EntityFramework.Model</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
