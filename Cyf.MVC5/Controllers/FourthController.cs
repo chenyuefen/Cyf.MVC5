@@ -35,6 +35,10 @@ namespace Cyf.MVC5.Controllers
     /// 
     /// 
     /// ************  实现搜索服务  **************
+    /// 1 运行LuceneSearch文件夹下Cyf.SearchEngines项目
+    /// 2 打开WCF服务
+    /// 3 直接调用
+    /// 
     /// 接口服务查询，建议封装一下；
     /// 建议跟数据库查询独立分开；
     /// 也是接口+实现+model,然后就IOC
