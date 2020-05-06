@@ -29,7 +29,7 @@ namespace Cyf.SearchEngines.UnitTestProject
         public void TestMethod2()
         {
             ISearcherAOP searcher = new SearcherAOP();
-            var s = searcher.QueryCommodityPage(1, 30, "刘茂", null, null, null);
+            var s = searcher.QueryCommodityPage(1, 30, "", null, null, null);
         }
     }
 }

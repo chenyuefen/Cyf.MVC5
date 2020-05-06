@@ -272,6 +272,9 @@
     <Content Include="Views\Third\Index.cshtml" />
     <Content Include="Views\Fourth\Index.cshtml" />
     <Content Include="Views\Fourth\Create.cshtml" />
+    <Content Include="Views\Fourth\Details.cshtml" />
+    <Content Include="Views\Fourth\Edit.cshtml" />
+    <Content Include="Views\Fourth\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

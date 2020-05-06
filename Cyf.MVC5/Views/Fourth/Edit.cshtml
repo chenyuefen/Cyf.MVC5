@@ -1,0 +1,44 @@
+﻿@model Cyf.EntityFramework.Model.Employee
+@{
+    ViewBag.Title = "Edit Commodity";
+}
+<h2>Edit New Commodity</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.id)
+        <div class="form-group">
+            @Html.LabelFor(model => model.company_id, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("companyList", ViewBag.companyList as List<SelectListItem>)
+                @Html.ValidationMessageFor(model => model.company_id)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.name, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.name)
+                @Html.ValidationMessageFor(model => model.name)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.position, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.position)
+                @Html.ValidationMessageFor(model => model.position)
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                @Html.Submit("Submit")
+                @Html.ValidationMessage("unableToSave")
+            </div>
+        </div>
+    </div>
+}
+<disv>
+    @Html.ActionLink("Back to List", "Index")
+</disv>
