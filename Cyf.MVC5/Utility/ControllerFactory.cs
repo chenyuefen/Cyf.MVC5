@@ -15,7 +15,7 @@ namespace Cyf.MVC5.Utility
 
         protected override IController GetControllerInstance(RequestContext requestContext, Type controllerType)
         {
-            this.logger.Warn($"{controllerType.Name}被构造...");
+            this.logger.Warn($"{controllerType?.Name}被构造...");
 
             IUnityContainer container = DIFactory.GetContainer();
             //return base.GetControllerInstance(requestContext, controllerType);

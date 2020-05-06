@@ -10,7 +10,7 @@ namespace Cyf.EntityFramework.Model
     public partial class Company
     {
         [Key]
-        public int company_id { get; set; }
+        public int? company_id { get; set; }
 
         [StringLength(255)]
         public string company_name { get; set; }

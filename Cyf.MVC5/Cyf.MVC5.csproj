@@ -271,6 +271,7 @@
     <Content Include="Views\Second\ChildAction.cshtml" />
     <Content Include="Views\Third\Index.cshtml" />
     <Content Include="Views\Fourth\Index.cshtml" />
+    <Content Include="Views\Fourth\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -313,6 +314,14 @@
     <ProjectReference Include="..\Cyf.Remote.Interface\Cyf.Remote.Interface.csproj">
       <Project>{A483F54F-4A89-4626-A682-4EE0AF8FD204}</Project>
       <Name>Cyf.Remote.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cyf.Remote.Service\Cyf.Remote.Service.csproj">
+      <Project>{c3ec4652-6d51-4958-8bb0-7175cb00bade}</Project>
+      <Name>Cyf.Remote.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cyf.Web.Core\Cyf.Web.Core.csproj">
+      <Project>{7B280E5F-ABA8-4AD5-A138-7B820FB10B3F}</Project>
+      <Name>Cyf.Web.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

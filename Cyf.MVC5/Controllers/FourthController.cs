@@ -11,6 +11,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Web;
 using System.Web.Mvc;
+using Cyf.Web.Core.Models;
 
 namespace Cyf.MVC5.Controllers
 {
@@ -52,13 +53,15 @@ namespace Cyf.MVC5.Controllers
     {
         private IUserService _iUserService = null;
         private ISearchService _iSearchService = null;
+        private ICompanyService _iCompanyService = null;
 
         private int pageSize = 2;
 
-        public FourthController(IUserService userService, ISearchService searchService)
+        public FourthController(IUserService userService, ISearchService searchService, ICompanyService companyService)
         {
             this._iUserService = userService;
             this._iSearchService = searchService;
+            this._iCompanyService = companyService;
         }
 
         public ActionResult Index(string searchString,int? pageIndex)
@@ -92,6 +95,9 @@ namespace Cyf.MVC5.Controllers
             return View(pageList);
         }
 
+
+        #region Lucene查询
+
         public ActionResult Search()
         {
             var result = this._iSearchService.QueryCommodityPage(1, 20, "女人", null, "", "");
@@ -101,5 +107,67 @@ namespace Cyf.MVC5.Controllers
             ISearchService searchService2 = DIFactory.GetContainer().Resolve<ISearchService>("update");
             return View(result);
         }
+        #endregion
+
+        #region Create
+        [HttpGet]
+        public ActionResult Create()
+        {
+            ViewBag.companyList = BuildCompanyList();
+
+            return View();
+        }
+        [AcceptVerbs(HttpVerbs.Put | HttpVerbs.Post)] //[HttpPost]
+        //[HttpPost]
+        //[HttpGet]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([Bind(Include = "company_id, name, position")]Employee commodity)
+        {
+            string title1 = this.HttpContext.Request.Params["name"];
+            string title2 = this.HttpContext.Request.QueryString["name"];
+            string title3 = this.HttpContext.Request.Form["name"];
+            if (ModelState.IsValid)//数据校验
+            {
+                Employee newCommodity = this._iUserService.Insert(commodity);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                throw new Exception("ModelState未通过检测");
+            }
+        }
+
+        [HttpPost]
+        public ActionResult AjaxCreate([Bind(Include = "company_id, name, position")]Employee commodity)
+        {
+            Employee newCommodity = this._iUserService.Insert(commodity);
+            AjaxResult ajaxResult = new AjaxResult()
+            {
+                Result = DoResult.Success,
+                PromptMsg = "插入成功"
+            };
+            return Json(ajaxResult);
+        }
+        #endregion Create
+
+
+        private IEnumerable<SelectListItem> BuildCompanyList()
+        {
+            Expression<Func<Company, bool>> funcWhere = null;
+            funcWhere = funcWhere.And(x => x.company_id != null);
+            var categoryList = this._iCompanyService.Query(funcWhere).ToList();
+            if (categoryList.Count() > 0)
+            {
+                return categoryList.Select(c => new SelectListItem()
+                {
+                    Text = c.company_name,
+                    Value = c.company_id.ToString(),
+                });
+            }
+            else return null;
+        }
     }
+
+
+
 }
