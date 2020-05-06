@@ -50,6 +50,7 @@ namespace Cyf.MVC5.Controllers
     /// 只要是我用的东西，都得写在我自己里面；如果必须用到别的类库的东西，可以通过委托传递进来；
     /// Cyf.Web.Core：专门为MVC网站服务的通用的帮助
     /// 
+    /// 
     /// ************  请求方法的识别（Get/Post），基础特性介绍[ChildActionOnly/Bind/ValidateAntiForgeryToken]  **************
     /// 必须通过HttpVerbs来识别，
     /// 如果没有标记，那么就用方法名称来识别
@@ -58,6 +59,11 @@ namespace Cyf.MVC5.Controllers
     /// [ValidateAntiForgeryToken] 防重复提交，在cookie里加上一个key，提交的时候先校验这个
     /// 
     /// 
+    /// ************  Ajax请求详解及其规范  **************
+    /// Ajax请求数据响应格式：
+    /// 一个项目组必须是统一的，前端才知道怎么应付
+    /// 还有很多其他情况，比如异常了--exceptionfilter--按照固定格式返回
+    ///                   比如没有权限--authorization--按照固定格式返回
     /// </summary>
     public class FourthController : Controller
     {

@@ -44,6 +44,7 @@
                         <a href="/Fourth/Details/@item.id">Details</a>|
                         @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
                         @Html.ActionLink("Delete", "Delete", new { id = item.id }) |
+                        @*Ajax请求*@
                         <a id="@item.id" href="javascript:void(0);" onclick="ajaxDelete(this)">ajaxDelete</a>
                     </td>
                 </tr>
