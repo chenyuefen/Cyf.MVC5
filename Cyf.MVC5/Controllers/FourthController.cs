@@ -64,6 +64,17 @@ namespace Cyf.MVC5.Controllers
     /// 一个项目组必须是统一的，前端才知道怎么应付
     /// 还有很多其他情况，比如异常了--exceptionfilter--按照固定格式返回
     ///                   比如没有权限--authorization--按照固定格式返回
+    ///                   
+    /// 
+    /// ************  Http请求的本质及不同请求contenttype的区别  **************
+    /// 请求--应答式，响应可以那么丰富？
+    /// 不同的类型其实方式一样的，只不过有个contenttype的差别
+    /// html---text/html
+    /// json---application/json
+    /// xml---application/xml
+    /// js----application/javascript
+    /// ico----image/x-icon
+    /// image/gif   image/jpeg   image/png
     /// </summary>
     public class FourthController : Controller
     {
