@@ -54,7 +54,13 @@ namespace Cyf.MVC5.Controllers
                 return View();
             }
         }
-
+        [HttpPost]
+        [AllowAnonymous]
+        public ActionResult Logout()
+        {
+            this.HttpContext.UserLogout();
+            return RedirectToAction("Index", "Home"); ;
+        }
         #region 生成验证码
 
         /// <summary>

@@ -278,6 +278,8 @@
     <Content Include="Views\Fourth\Edit.cshtml" />
     <Content Include="Views\Fourth\Delete.cshtml" />
     <Content Include="Views\Fifth\Login.cshtml" />
+    <Content Include="Views\Fifth\Index.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

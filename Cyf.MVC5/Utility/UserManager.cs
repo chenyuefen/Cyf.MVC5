@@ -83,6 +83,38 @@ namespace Cyf.MVC5.Utility
 
 
         }
+
+
+        /// <summary>
+        /// 用户注销
+        /// </summary>
+        /// <param name="context"></param>
+        public static void UserLogout(this HttpContextBase context)
+        {
+            #region Cookie
+            HttpCookie myCookie = context.Request.Cookies["CurrentUser"];
+            if (myCookie != null)
+            {
+                myCookie.Expires = DateTime.Now.AddMinutes(-1);//设置过过期
+                context.Response.Cookies.Add(myCookie);
+            }
+
+            #endregion Cookie
+
+            #region Session
+            var sessionUser = context.Session["CurrentUser"];
+            if (sessionUser != null && sessionUser is CurrentUser)
+            {
+                CurrentUser currentUser = (CurrentUser)context.Session["CurrentUser"];
+                logger.Debug(string.Format("用户id={0} Name={1}退出系统", currentUser.Id, currentUser.Name));
+            }
+            context.Session["CurrentUser"] = null;//表示将制定的键的值清空，并释放掉，
+            context.Session.Remove("CurrentUser");
+            context.Session.Clear();//表示将会话中所有的session的键值都清空，但是session还是依然存在，
+            context.Session.RemoveAll();//
+            context.Session.Abandon();//就是把当前Session对象删除了，下一次就是新的Session了   
+            #endregion Session
+        }
         public enum LoginResult
         {
             /// <summary>
