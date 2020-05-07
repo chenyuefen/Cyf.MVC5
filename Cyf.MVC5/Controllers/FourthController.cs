@@ -75,6 +75,12 @@ namespace Cyf.MVC5.Controllers
     /// js----application/javascript
     /// ico----image/x-icon
     /// image/gif   image/jpeg   image/png
+    /// 
+    /// 
+    /// ************  MVC各种Result的事儿  **************
+    /// Json方法实际上是new JsonResult 然后ExecuteResult
+    /// 指定ContentType-application/json  然后将Data序列化成字符串写入stream
+    /// 我们可以随意扩展的，只需要把数据放入response  指定好contenttype
     /// </summary>
     public class FourthController : Controller
     {
