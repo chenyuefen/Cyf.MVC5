@@ -201,6 +201,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\System\Controllers\HomeController.cs" />
     <Compile Include="Areas\System\SystemAreaRegistration.cs" />
+    <Compile Include="Controllers\FifthController.cs" />
     <Compile Include="Controllers\FirstController.cs" />
     <Compile Include="Controllers\FourthController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -275,6 +276,7 @@
     <Content Include="Views\Fourth\Details.cshtml" />
     <Content Include="Views\Fourth\Edit.cshtml" />
     <Content Include="Views\Fourth\Delete.cshtml" />
+    <Content Include="Views\Fifth\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
