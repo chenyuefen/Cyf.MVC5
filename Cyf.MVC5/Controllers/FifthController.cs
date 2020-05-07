@@ -36,6 +36,11 @@ namespace Cyf.MVC5.Controllers
     /// AllowAnonymous匿名，单独加特性是没用的
     /// 其实需要验证时支持，甚至说可以自定义一些特性一样可以生效
     /// 
+    /// 
+    /// ************  登陆后跳转回原链接  **************
+    /// 用户访问A页面--没有权限--去登陆--成功跳回A页面
+    /// 前端更多加个参数    
+    /// 用session,验证失败记录url，登陆成功使用url
     /// </summary>
     [CustomAuthorize("~/Home/Index")]
     public class FifthController : Controller
@@ -65,7 +70,15 @@ namespace Cyf.MVC5.Controllers
             var result = base.HttpContext.Login(name, password, verify);
             if (result == UserManager.LoginResult.Success)
             {
-                return base.Redirect("/Home/Index");
+                //如果有需要跳转的链接
+                if (base.HttpContext.Session["CurrentUrl"] != null)
+                {
+                    string url = base.HttpContext.Session["CurrentUrl"].ToString();
+                    base.HttpContext.Session.Remove("CurrentUrl");
+                    return base.Redirect(url);
+                }
+                else
+                    return base.Redirect("/Home/Index");
             }
             else
             {
