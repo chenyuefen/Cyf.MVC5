@@ -27,6 +27,16 @@ namespace Cyf.MVC5.Utility.Filter
         {
             var httpContext = filterContext.HttpContext;//能拿到httpcontext 就可以为所欲为
 
+            //检验特性
+            if (filterContext.ActionDescriptor.IsDefined(typeof(CustomAllowAnonymousAttribute), true))
+            {
+                return;
+            }
+            //检验特性
+            else if (filterContext.ActionDescriptor.ControllerDescriptor.IsDefined(typeof(CustomAllowAnonymousAttribute), true))
+            {
+                return;
+            }
             if (httpContext.Session["CurrentUser"] == null
                 || !(httpContext.Session["CurrentUser"] is CurrentLoginUser))//为空了，
             {

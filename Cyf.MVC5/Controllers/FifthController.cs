@@ -21,6 +21,21 @@ namespace Cyf.MVC5.Controllers
     /// 4 解读Filter生效机制
     /// 
     /// 
+    /// ************  页面访问权限（自定义CustomAuthorizeFilter）  **************
+    /// 登陆后有权限控制，有的页面的是需要用户登录后才能访问的
+    /// 需要在访问页面时增加登陆验证
+    /// 也不能每个action都来一遍
+    /// 
+    /// 自定义CustomAuthorizeFilter，
+    /// 1 方法注册----单个方法生效--------------在方法上加特性CustomAuthorize
+    /// 2 控制器注册--控制器全部方法生效--------在控制器上加特性CustomAuthorize
+    /// 3 全局注册----全部控制器的全部方法生效--在FilterConfig里加CustomAuthorizeAttribute
+    /// 
+    /// 
+    /// ************  AllowAnonymous跳过权限验证  **************
+    /// AllowAnonymous匿名，单独加特性是没用的
+    /// 其实需要验证时支持，甚至说可以自定义一些特性一样可以生效
+    /// 
     /// </summary>
     [CustomAuthorize("~/Home/Index")]
     public class FifthController : Controller
@@ -33,14 +48,16 @@ namespace Cyf.MVC5.Controllers
 
         [CustomAuthorize("~/Home/Index")]
         [HttpGet]//响应get请求
-        [AllowAnonymous]
+        //[AllowAnonymous]
+        [CustomAllowAnonymous]
         public ViewResult Login()
         {
             return View();
         }
 
         [HttpPost]
-        [AllowAnonymous]
+        //[AllowAnonymous]
+        [CustomAllowAnonymous]
         public ActionResult Login(string name, string password, string verify)
         {
             string formName = base.HttpContext.Request.Form["Name"];
