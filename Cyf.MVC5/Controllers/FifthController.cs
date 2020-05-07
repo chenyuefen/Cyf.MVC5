@@ -31,7 +31,7 @@ namespace Cyf.MVC5.Controllers
             return View();
         }
 
-
+        [CustomAuthorize("~/Home/Index")]
         [HttpGet]//响应get请求
         [AllowAnonymous]
         public ViewResult Login()
