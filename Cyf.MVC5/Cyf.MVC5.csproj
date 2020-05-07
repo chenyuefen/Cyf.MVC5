@@ -218,6 +218,7 @@
     <Compile Include="Utility\ControllerFactory.cs" />
     <Compile Include="Utility\DIFactory.cs" />
     <Compile Include="Utility\Logger.cs" />
+    <Compile Include="Utility\UserManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />

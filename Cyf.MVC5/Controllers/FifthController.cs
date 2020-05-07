@@ -1,4 +1,6 @@
-﻿using Cyf.Framework.ImageHelper;
+﻿using Cyf.Framework.Extension;
+using Cyf.Framework.ImageHelper;
+using Cyf.MVC5.Utility;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -29,10 +31,39 @@ namespace Cyf.MVC5.Controllers
 
 
         [HttpGet]//响应get请求
+        [AllowAnonymous]
         public ViewResult Login()
         {
             return View();
         }
+
+        [HttpPost]
+        [AllowAnonymous]
+        public ActionResult Login(string name, string password, string verify)
+        {
+            string formName = base.HttpContext.Request.Form["Name"];
+
+            var result = base.HttpContext.Login(name, password, verify);
+            if (result == UserManager.LoginResult.Success)
+            {
+                if (base.HttpContext.Session["CurrentUrl"] != null)
+                {
+                    string url = base.HttpContext.Session["CurrentUrl"].ToString();
+                    base.HttpContext.Session.Remove("CurrentUrl");
+                    return base.Redirect(url);
+                }
+                else
+                    return base.Redirect("/Home/Index");
+            }
+            else
+            {
+                ModelState.AddModelError("failed", result.GetRemark());
+                return View();
+            }
+        }
+
+        #region 生成验证码
+
         /// <summary>
         /// 验证码 FileContentResult
         /// </summary>
@@ -58,5 +89,8 @@ namespace Cyf.MVC5.Controllers
             bitmap.Save(base.Response.OutputStream, ImageFormat.Gif);
             base.Response.ContentType = "image/gif";
         }
+
+        #endregion
+
     }
 }
