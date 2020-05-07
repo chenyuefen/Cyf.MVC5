@@ -62,9 +62,9 @@ namespace Cyf.MVC5.Controllers
     /// </summary>
     public class FirstController : Controller
     {
-        private List<CurrentUser> _UserList = new List<CurrentUser>()
+        private List<CurrentLoginUser> _UserList = new List<CurrentLoginUser>()
         {
-            new CurrentUser()
+            new CurrentLoginUser()
             {
                 Id=1,
                 Name="Z",
@@ -73,7 +73,7 @@ namespace Cyf.MVC5.Controllers
                 LoginTime=DateTime.Now,
                 Password="123456"
             },
-            new CurrentUser()
+            new CurrentLoginUser()
             {
                 Id=2,
                 Name="白天搬砖",
@@ -82,7 +82,7 @@ namespace Cyf.MVC5.Controllers
                 LoginTime=DateTime.Now,
                 Password="123456"
             },
-            new CurrentUser()
+            new CurrentLoginUser()
             {
                 Id=3,
                 Name="晚上做梦",
@@ -103,7 +103,7 @@ namespace Cyf.MVC5.Controllers
         {
             //base.HttpContext.Session
             //System.Web.Mvc.WebViewPage
-            CurrentUser currentUser = this._UserList.FirstOrDefault(u => u.Id == id)
+            CurrentLoginUser currentUser = this._UserList.FirstOrDefault(u => u.Id == id)
                 ?? this._UserList[0];
 
             base.ViewData["CurrentUserViewData"] = this._UserList[0];//ViewData

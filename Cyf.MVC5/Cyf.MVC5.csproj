@@ -211,12 +211,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\CurrentUser.cs" />
+    <Compile Include="Models\CurrentLoginUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utility\AOP\LogAfterBehavior.cs" />
     <Compile Include="Utility\AOP\LogBeforeBehavior.cs" />
     <Compile Include="Utility\ControllerFactory.cs" />
     <Compile Include="Utility\DIFactory.cs" />
+    <Compile Include="Utility\Filter\CustomAuthorizeAttribute.cs" />
     <Compile Include="Utility\Logger.cs" />
     <Compile Include="Utility\UserManager.cs" />
   </ItemGroup>

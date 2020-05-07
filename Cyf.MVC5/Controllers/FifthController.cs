@@ -1,6 +1,7 @@
 ﻿using Cyf.Framework.Extension;
 using Cyf.Framework.ImageHelper;
 using Cyf.MVC5.Utility;
+using Cyf.MVC5.Utility.Filter;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -21,6 +22,7 @@ namespace Cyf.MVC5.Controllers
     /// 
     /// 
     /// </summary>
+    [CustomAuthorize("~/Home/Index")]
     public class FifthController : Controller
     {
         // GET: Fifth

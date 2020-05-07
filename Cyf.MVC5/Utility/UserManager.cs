@@ -54,7 +54,7 @@ namespace Cyf.MVC5.Utility
                     else
                     {
                         //登录成功  写cookie session
-                        CurrentUser currentUser = new CurrentUser()
+                        CurrentLoginUser currentUser = new CurrentLoginUser()
                         {
                             Id = user.id,
                             Name = user.name,
@@ -103,9 +103,9 @@ namespace Cyf.MVC5.Utility
 
             #region Session
             var sessionUser = context.Session["CurrentUser"];
-            if (sessionUser != null && sessionUser is CurrentUser)
+            if (sessionUser != null && sessionUser is CurrentLoginUser)
             {
-                CurrentUser currentUser = (CurrentUser)context.Session["CurrentUser"];
+                CurrentLoginUser currentUser = (CurrentLoginUser)context.Session["CurrentUser"];
                 logger.Debug(string.Format("用户id={0} Name={1}退出系统", currentUser.Id, currentUser.Name));
             }
             context.Session["CurrentUser"] = null;//表示将制定的键的值清空，并释放掉，
