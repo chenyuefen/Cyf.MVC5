@@ -46,14 +46,7 @@ namespace Cyf.MVC5.Controllers
             var result = base.HttpContext.Login(name, password, verify);
             if (result == UserManager.LoginResult.Success)
             {
-                if (base.HttpContext.Session["CurrentUrl"] != null)
-                {
-                    string url = base.HttpContext.Session["CurrentUrl"].ToString();
-                    base.HttpContext.Session.Remove("CurrentUrl");
-                    return base.Redirect(url);
-                }
-                else
-                    return base.Redirect("/Home/Index");
+                return base.Redirect("/Home/Index");
             }
             else
             {

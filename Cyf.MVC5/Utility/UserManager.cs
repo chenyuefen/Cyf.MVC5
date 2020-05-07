@@ -64,6 +64,13 @@ namespace Cyf.MVC5.Utility
                             LoginTime = DateTime.Now
                         };
 
+                        #region Session
+                        //context.Session.RemoveAll();
+                        var sessionUser = context.Session["CurrentUser"];
+                        context.Session["CurrentUser"] = currentUser;
+                        context.Session.Timeout = 3;//minute  session过期等于Abandon
+                        #endregion Session
+
                         logger.Debug(string.Format("用户id={0} Name={1}登录系统", currentUser.Id, currentUser.Name));
                         return LoginResult.Success;
                     }
