@@ -7,8 +7,8 @@
     <ProjectGuid>{7B280E5F-ABA8-4AD5-A138-7B820FB10B3F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Ruanmou.Web.Core</RootNamespace>
-    <AssemblyName>Ruanmou.Web.Core</AssemblyName>
+    <RootNamespace>Cyf.Web.Core</RootNamespace>
+    <AssemblyName>Cyf.Web.Core</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />

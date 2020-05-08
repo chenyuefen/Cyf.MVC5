@@ -330,7 +330,7 @@
       <Name>Cyf.Remote.Service</Name>
     </ProjectReference>
     <ProjectReference Include="..\Cyf.Web.Core\Cyf.Web.Core.csproj">
-      <Project>{7B280E5F-ABA8-4AD5-A138-7B820FB10B3F}</Project>
+      <Project>{7b280e5f-aba8-4ad5-a138-7b820fb10b3f}</Project>
       <Name>Cyf.Web.Core</Name>
     </ProjectReference>
   </ItemGroup>
