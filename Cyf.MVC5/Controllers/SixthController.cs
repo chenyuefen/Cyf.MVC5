@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Cyf.MVC5.Utility;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,9 +17,40 @@ namespace Cyf.MVC5.Controllers
     /// </summary>
     public class SixthController : Controller
     {
+        private Logger logger = new Logger(typeof(SixthController));
+
         // GET: Sixth
         public ActionResult Index()
         {
+            return View();
+        }
+        /// <summary>
+        /// 抛异常
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult Exception()
+        {
+            int i = 0;
+            int k = 10 / i;
+            return View();
+        }
+
+
+        /// <summary>
+        /// 异常捕捉
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult ExceptionCatch()
+        {
+            try
+            {
+                int i = 0;
+                int k = 10 / i;
+            }
+            catch (Exception ex)
+            {
+                this.logger.Error(ex.Message);
+            }
             return View();
         }
     }

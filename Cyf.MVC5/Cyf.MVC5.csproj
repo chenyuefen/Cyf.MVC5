@@ -220,6 +220,7 @@
     <Compile Include="Utility\DIFactory.cs" />
     <Compile Include="Utility\Filter\CustomAllowAnonymousAttribute.cs" />
     <Compile Include="Utility\Filter\CustomAuthorizeAttribute.cs" />
+    <Compile Include="Utility\Filter\CustomHandleErrorAttribute.cs" />
     <Compile Include="Utility\Logger.cs" />
     <Compile Include="Utility\UserManager.cs" />
   </ItemGroup>
