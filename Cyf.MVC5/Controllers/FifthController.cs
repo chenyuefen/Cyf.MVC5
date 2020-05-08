@@ -46,6 +46,18 @@ namespace Cyf.MVC5.Controllers
     /// 
     /// c 特性使用范围
     ///   希望特性通用在不同的系统，不同的登陆地址
+    ///   
+    /// 
+    /// ************  Filter生效机制  **************
+    /// 控制器已经实例化了-- ExecuteCore--找到方法名字--ControllerActionInvoker.InvokeAction
+    /// ---找到全部的Filter特性---InvokeAuthorize--result不为空，直接InvokeActionResult
+    /// --为空就正常执行Action
+    /// 
+    /// 有了一个类型实例，有一个方法名称，希望你反射执行
+    /// 在找到方法后，执行方法前---可以检测下特性
+    /// （1 来自全局  2 找控制器 3 找方法的）
+    /// ---特性是我预定义--只找这三类---按类执行
+    /// ---定个标识，为空正常，不为空就跳转--正常就继续执行方法
     /// </summary>
     [CustomAuthorize("~/Home/Index")]
     public class FifthController : Controller
