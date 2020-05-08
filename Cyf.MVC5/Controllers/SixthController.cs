@@ -1,5 +1,6 @@
 ﻿using Cyf.MVC5.Utility;
 using Cyf.MVC5.Utility.Filter;
+using Cyf.MVC5.Utility.FilterTest;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,7 +24,25 @@ namespace Cyf.MVC5.Controllers
     /// -> OnResultExecuting
     /// -> Action跳转的视图/返回的ActionResult真实执行
     /// -> OnResultExecuted
+    /// 
+    /// 
+    ///  ************  在不同地方（Globle/Controller/Aciton）使用ActionFilterAttribute，其执行顺序  **************
+    /// 俄罗斯套娃
+    /// Global OnActionExecuting
+    /// Controller OnActionExecuting
+    /// Action OnActionExecuting
+    /// Action真实执行
+    /// Action OnActionExecuted
+    /// Controller OnActionExecuted
+    /// Global OnActionExecuted
+    /// 
+    /// 不同注册位置生效顺序--全局/控制器/Action
+    /// 同一位置按照先后顺序生效
+    /// (不设置Order默认是1) 
+    /// 
+    /// ** 【设置后是按照从小到大执行】
     /// </summary>
+    [TestControllerActionFilter]
     public class SixthController : Controller
     {
         private Logger logger = new Logger(typeof(SixthController));
@@ -41,7 +60,7 @@ namespace Cyf.MVC5.Controllers
         //F：不能
         #endregion
         // GET: Sixth
-        [CustomActionFilterAttribute]
+        [CustomActionFilter]
         public ActionResult Index()
         {
             return View();
@@ -50,6 +69,7 @@ namespace Cyf.MVC5.Controllers
         /// 抛异常
         /// </summary>
         /// <returns></returns>
+        [TestActionFilter]
         public ActionResult Exception()
         {
             int i = 0;
