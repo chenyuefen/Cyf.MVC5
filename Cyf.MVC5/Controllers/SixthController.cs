@@ -36,11 +36,12 @@ namespace Cyf.MVC5.Controllers
     /// Controller OnActionExecuted
     /// Global OnActionExecuted
     /// 
-    /// 不同注册位置生效顺序--全局/控制器/Action
-    /// 同一位置按照先后顺序生效
-    /// (不设置Order默认是1) 
     /// 
-    /// ** 【设置后是按照从小到大执行】
+    /// ************  Fitler的Order设置顺序规则  **************
+    /// - 不设置Order默认是1
+    /// - 不同注册位置生效顺序--全局/控制器/Action
+    /// - 设置后是按照从小到大执行
+    /// - 同一位置按照先后顺序生效
     /// </summary>
     [TestControllerActionFilter]
     public class SixthController : Controller
@@ -69,7 +70,9 @@ namespace Cyf.MVC5.Controllers
         /// 抛异常
         /// </summary>
         /// <returns></returns>
-        [TestActionFilter]
+        [TestActionFilter(Order = 24)]
+        [TestControllerActionFilter(Order = 5)]
+        [TestGlobalActionFilter]
         public ActionResult Exception()
         {
             int i = 0;
