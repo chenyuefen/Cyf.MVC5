@@ -24,5 +24,21 @@ namespace Cyf.MVC5
 
             this.logger.Info("网站启动了。。。");
         }
+
+        /// <summary>
+        /// 全局式的异常处理，可以抓住漏网之鱼
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void Application_Error(object sender, EventArgs e)
+        {
+            Exception excetion = Server.GetLastError();
+            this.logger.Error($"{base.Context.Request.Url.AbsoluteUri}出现异常");
+            Response.Write("System is Error....");
+            Server.ClearError();
+
+            //Response.Redirect
+            //base.Context.RewritePath("/Home/Error?msg=")
+        }
     }
 }
