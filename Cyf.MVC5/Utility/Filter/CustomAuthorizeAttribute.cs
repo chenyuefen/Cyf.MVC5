@@ -40,19 +40,20 @@ namespace Cyf.MVC5.Utility.Filter
             if (httpContext.Session["CurrentUser"] == null
                 || !(httpContext.Session["CurrentUser"] is CurrentLoginUser))//为空了，
             {
-                ////这里有用户，有地址 其实可以检查权限
-                //if (httpContext.Request.IsAjaxRequest())
-                ////httpContext.Request.Headers["xxx"].Equals("XMLHttpRequst")
-                //{
-                //    filterContext.Result = new NewtonJsonResult(
-                //        new AjaxResult()
-                //        {
-                //            Result = DoResult.OverTime,
-                //            DebugMessage = "登陆过期",
-                //            RetValue = ""
-                //        });
-                //}
-                //else
+                //这里有用户，有地址 其实可以检查权限
+                //如果是Ajax请求。则不能跳转到原链接，应该返回固定格式的数据
+                if (httpContext.Request.IsAjaxRequest())
+                //httpContext.Request.Headers["xxx"].Equals("XMLHttpRequst")
+                {
+                    filterContext.Result = new NewtonJsonResult(
+                        new AjaxResult()
+                        {
+                            Result = DoResult.OverTime,
+                            DebugMessage = "登陆过期",
+                            RetValue = ""
+                        });
+                }
+                else
                 {
                     //记录跳转前的绝对地址
                     httpContext.Session["CurrentUrl"] = httpContext.Request.Url.AbsoluteUri;

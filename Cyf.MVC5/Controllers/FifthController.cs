@@ -38,9 +38,14 @@ namespace Cyf.MVC5.Controllers
     /// 
     /// 
     /// ************  登陆后跳转回原链接  **************
-    /// 用户访问A页面--没有权限--去登陆--成功跳回A页面
-    /// 前端更多加个参数    
-    /// 用session,验证失败记录url，登陆成功使用url
+    /// a 用户访问A页面--没有权限--去登陆--成功跳回A页面
+    ///   前端更多加个参数    
+    ///   用session,验证失败记录url，登陆成功使用url
+    /// 
+    /// b 如果是ajax请求时没登录，需要返回规定格式的Ajax数据
+    /// 
+    /// c 特性使用范围
+    ///   希望特性通用在不同的系统，不同的登陆地址
     /// </summary>
     [CustomAuthorize("~/Home/Index")]
     public class FifthController : Controller
