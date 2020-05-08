@@ -1,4 +1,5 @@
 ﻿using Cyf.MVC5.Utility;
+using Cyf.MVC5.Utility.Filter;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,14 @@ namespace Cyf.MVC5.Controllers
     /// 3 IActionFilter IResultFilter扩展订制
     /// 4 Filter全总结，实战框架中AOP解决方案
     /// 
+    /// 
+    /// ************  ActionFilterAttribute系统自带AOP特性  **************
+    /// -> OnActionExecuting  
+    /// -> Action真实执行 
+    /// -> OnActionExecuted
+    /// -> OnResultExecuting
+    /// -> Action跳转的视图/返回的ActionResult真实执行
+    /// -> OnResultExecuted
     /// </summary>
     public class SixthController : Controller
     {
@@ -32,6 +41,7 @@ namespace Cyf.MVC5.Controllers
         //F：不能
         #endregion
         // GET: Sixth
+        [CustomActionFilterAttribute]
         public ActionResult Index()
         {
             return View();

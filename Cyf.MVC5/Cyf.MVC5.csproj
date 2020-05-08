@@ -218,6 +218,7 @@
     <Compile Include="Utility\AOP\LogBeforeBehavior.cs" />
     <Compile Include="Utility\ControllerFactory.cs" />
     <Compile Include="Utility\DIFactory.cs" />
+    <Compile Include="Utility\Filter\CustomActionFilterAttribute.cs" />
     <Compile Include="Utility\Filter\CustomAllowAnonymousAttribute.cs" />
     <Compile Include="Utility\Filter\CustomAuthorizeAttribute.cs" />
     <Compile Include="Utility\Filter\CustomHandleErrorAttribute.cs" />
