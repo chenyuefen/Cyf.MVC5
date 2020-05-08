@@ -26,7 +26,7 @@ namespace Cyf.MVC5.Utility.Filter
             var request = filterContext.HttpContext.Request;
             var respose = filterContext.HttpContext.Response;
             string acceptEncoding = request.Headers["Accept-Encoding"];//检测支持格式
-            if (!string.IsNullOrWhiteSpace(acceptEncoding) && acceptEncoding.ToUpper().Contains("GZIP"))
+            if (!string.IsNullOrWhiteSpace(acceptEncoding) && acceptEncoding.ToUpper().Contains("GZIP"))//是否支持压缩
             {
                 respose.AddHeader("Content-Encoding", "gzip");//响应头指定类型
                 respose.Filter = new GZipStream(respose.Filter, CompressionMode.Compress);//压缩类型指定

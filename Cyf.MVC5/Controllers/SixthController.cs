@@ -42,6 +42,19 @@ namespace Cyf.MVC5.Controllers
     /// - 不同注册位置生效顺序--全局/控制器/Action
     /// - 设置后是按照从小到大执行
     /// - 同一位置按照先后顺序生效
+    /// 
+    /// 
+    /// ************  ActionFilter的主要功能/作用  **************
+    /// 日志  参数检测-过滤参数  缓存  重写视图 压缩 
+    /// 防盗链  统计访问量--限流
+    /// 不同的客户端跳转不同的页面
+    /// 异常--权限：当然可以做，但是不合适，专业的对口
+    /// 
+    /// 【ActionFilter只能是以Action为单位】
+    /// 如果是其他方法要加AOP,只能用类似Unity此类框架扩展
+    /// 
+    /// ActionFilter 即使Action返回string 甚至Null  
+    /// 4个方法都是会生效的
     /// </summary>
     [TestControllerActionFilter]
     public class SixthController : Controller
