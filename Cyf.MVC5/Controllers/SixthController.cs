@@ -18,7 +18,19 @@ namespace Cyf.MVC5.Controllers
     public class SixthController : Controller
     {
         private Logger logger = new Logger(typeof(SixthController));
-
+        #region 多异常情况
+        //1 Action异常,没被catch                       T 
+        //2 Action异常,被catch                         F
+        //3 Action调用Service异常                      T  异常冒泡 
+        //4 Action正常视图出现异常                     T  ExecuteResult是包裹在try里面的
+        //5 控制器构造出现异常                         F  控制器构造后才有Filter
+        //6 Action名称错误                             F  因为请求其实都没进mvc流程
+        //7 任意错误地址                               F
+        //8 权限Filter异常                             T  权限fileter也是在try里面的
+        //全局注册，能不能进入自定义的异常Filter
+        //T：能被自定义错误特性捕捉
+        //F：不能
+        #endregion
         // GET: Sixth
         public ActionResult Index()
         {
