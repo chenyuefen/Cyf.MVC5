@@ -205,6 +205,7 @@
     <Compile Include="Controllers\FirstController.cs" />
     <Compile Include="Controllers\FourthController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PipeController.cs" />
     <Compile Include="Controllers\SecondController.cs" />
     <Compile Include="Controllers\SixthController.cs" />
     <Compile Include="Controllers\ThirdController.cs" />
@@ -227,6 +228,7 @@
     <Compile Include="Utility\Filter\CustomAuthorizeAttribute.cs" />
     <Compile Include="Utility\Filter\CustomHandleErrorAttribute.cs" />
     <Compile Include="Utility\Logger.cs" />
+    <Compile Include="Utility\PipeLine\CustomHttpModule.cs" />
     <Compile Include="Utility\UserManager.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -290,6 +292,7 @@
     <Content Include="Views\Fifth\Index.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Sixth\Index.cshtml" />
+    <Content Include="Views\Pipe\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
