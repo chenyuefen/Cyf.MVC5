@@ -50,5 +50,38 @@ namespace Cyf.MVC5
         {
             this.logger.Info("this is CustomHttpModuleCyf_ModuleHandler");
         }
+
+
+
+        /// <summary>
+        /// 会在系统新增一个session时候触发
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void Session_Start(object sender, EventArgs e)
+        {
+            HttpContext.Current.Application.Lock();
+            object oValue = HttpContext.Current.Application.Get("TotalCount");
+            if (oValue == null)
+            {
+                HttpContext.Current.Application.Add("TotalCount", 1);
+            }
+            else
+            {
+                HttpContext.Current.Application.Add("TotalCount", (int)oValue + 1);
+            }
+            HttpContext.Current.Application.UnLock();
+            this.logger.Debug("这里执行了Session_Start");
+        }
+
+        /// <summary>
+        /// 系统释放一个session的时候
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void Session_End(object sender, EventArgs e)
+        {
+            this.logger.Debug("这里执行了Session_End");
+        }
     }
 }
