@@ -14,6 +14,13 @@ namespace Cyf.MVC5.Controllers
     /// 4 Global事件
     /// 
     /// 
+    /// ************  管道处理模型的定义  **************
+    /// 所谓管道处理模型，其实就是后台如何处理一个Http请求
+    /// 定义多个事件完成处理步骤，每个事件可以扩展动作(httpmodule)，
+    /// 最后有个httphandler完成请求的处理，这个过程就是管道处理模型
+    /// 还有一个全局的上下文环境httpcontext，无论参数，中间结果 最终结果，都保存在其中
+    /// 
+    /// 
     /// ************  HttpModule注册  **************
     ///  对HttpApplication里面的事件进行动作注册的，就叫IHttpModule
     ///  ->自定义一个HttpModule
@@ -30,6 +37,10 @@ namespace Cyf.MVC5.Controllers
     ///  
     ///  - HttpModule是对HttpApplication的事件注册动作
     ///  - Global是对httpmodule里面的事件注册动作
+    ///  
+    /// 
+    /// 
+
     /// </summary>
     public class PipeController : Controller
     {
@@ -38,5 +49,13 @@ namespace Cyf.MVC5.Controllers
         {
             return View();
         }
+
+        public ActionResult Handler()
+        {
+            base.ViewBag.HttpHandler = base.HttpContext.CurrentHandler.GetType().FullName;
+            //base.RouteData.Values //路由匹配后，获取的信息
+            return View();
+        }
+
     }
 }

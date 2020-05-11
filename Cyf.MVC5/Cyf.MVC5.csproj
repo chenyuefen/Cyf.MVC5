@@ -293,6 +293,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Sixth\Index.cshtml" />
     <Content Include="Views\Pipe\Index.cshtml" />
+    <Content Include="Views\Pipe\Handler.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
