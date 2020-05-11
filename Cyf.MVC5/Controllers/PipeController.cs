@@ -54,6 +54,16 @@ namespace Cyf.MVC5.Controllers
     /// -> Web.Config[system.webServer][handlers]节点配置文件注册
     /// -> 然后所写的自定义后缀名的链接都会跳转至所写的handler处理
     /// -> 注意配好路由避免操作被拦截
+    /// 
+    /// 
+    /// ************  MVC框架的管道模型扩展流程  **************
+    /// 网站启动时---对RouteCollection进行配置
+    /// 把正则规则和RouteHandler（提供httphandler）绑定，放入RouteCollection
+    /// 
+    /// 请求来临时---用RouteCollection进行匹配
+    /// MVC框架其实就是在Asp.Net管道上扩展的，在PostResolveCache事件扩展了UrlRoutingModule，
+    /// 会在任何请求进来后，先进行路由匹配，如果匹配上了，就指定httphandler；没有匹配就还是走原始流程
+    /// 
     /// </summary>
     public class PipeController : Controller
     {
