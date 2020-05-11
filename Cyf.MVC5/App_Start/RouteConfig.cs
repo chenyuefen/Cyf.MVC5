@@ -23,24 +23,24 @@ namespace Cyf.MVC5
             //.axd是历史原因，最开始都是webform，请求都是.aspx后缀，IIS根据后缀转发请求；MVC出现了，没有后缀，IIS6以及更早版本，打了个补丁，把mvc的请求加上个.axd的后缀，然后这种都转发到网站----新版本的IIS已经不需要了，遇到了就直接忽略，还是走原始流程
             routes.IgnoreRoute("CustomService/{*pathInfo}");//以CustomService开头，都不走路由
 
-            routes.MapRoute(
-                name: "About",
-                url: "About",
-                defaults: new { controller = "Home", action = "About", id = UrlParameter.Optional }
-                );//固定路由，/Home/About----About
+            //routes.MapRoute(
+            //    name: "About",
+            //    url: "About",
+            //    defaults: new { controller = "Home", action = "About", id = UrlParameter.Optional }
+            //    );//固定路由，/Home/About----About
 
-            routes.MapRoute(
-               name: "Test",
-               url: "Test/{action}/{id}",
-               defaults: new { controller = "Second", action = "Index", id = UrlParameter.Optional }
-               );//修改控制器，
+            //routes.MapRoute(
+            //   name: "Test",
+            //   url: "Test/{action}/{id}",
+            //   defaults: new { controller = "Second", action = "Index", id = UrlParameter.Optional }
+            //   );//修改控制器，
 
-            routes.MapRoute(
-              name: "Regex",
-              url: "{controller}/{action}_{year}_{month}_{day}",
-              defaults: new { controller = "Second", action = "Index", id = UrlParameter.Optional },
-              constraints: new { year = @"\d{4}", month = @"\d{2}", day = @"\d{2}" }
-              );
+            //routes.MapRoute(
+            //  name: "Regex",
+            //  url: "{controller}/{action}_{year}_{month}_{day}",
+            //  defaults: new { controller = "Second", action = "Index", id = UrlParameter.Optional },
+            //  constraints: new { year = @"\d{4}", month = @"\d{2}", day = @"\d{2}" }
+            //  );
             //http://localhost:2017/second/Time_2019_06_13    Regex
             //http://localhost:2017/second/Time_2019_6_13 失败 
             //http://localhost:2017/second/Time?year=2019&month=6&day=13  Default

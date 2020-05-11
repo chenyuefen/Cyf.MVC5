@@ -47,6 +47,13 @@ namespace Cyf.MVC5.Controllers
     /// 配置文件指定映射关系：后缀名与处理程序的关系(IHttpHandler---IHttpHandlerFactory)
     /// Http任何一个请求一定是由某一个具体的Handler来处理的
     /// 
+    /// 
+    /// ************  HttpHandler应用及实现  **************
+    /// 自定义handler处理，就是可以处理各种后缀请求，可以加入自己的逻辑
+    /// -> 自定义一个HttpModule
+    /// -> Web.Config[system.webServer][handlers]节点配置文件注册
+    /// -> 然后所写的自定义后缀名的链接都会跳转至所写的handler处理
+    /// -> 注意配好路由避免操作被拦截
     /// </summary>
     public class PipeController : Controller
     {

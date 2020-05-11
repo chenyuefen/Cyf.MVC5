@@ -30,16 +30,16 @@ namespace Cyf.MVC5
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        protected void Application_Error(object sender, EventArgs e)
-        {
-            Exception excetion = Server.GetLastError();
-            this.logger.Error($"{base.Context.Request.Url.AbsoluteUri}出现异常");
-            Response.Write("System is Error....");
-            Server.ClearError();
+        //protected void Application_Error(object sender, EventArgs e)
+        //{
+        //    Exception excetion = Server.GetLastError();
+        //    this.logger.Error($"{base.Context.Request.Url.AbsoluteUri}出现异常");
+        //    Response.Write("System is Error....");
+        //    Server.ClearError();
 
-            //Response.Redirect
-            //base.Context.RewritePath("/Home/Error?msg=")
-        }
+        //    //Response.Redirect
+        //    //base.Context.RewritePath("/Home/Error?msg=")
+        //}
 
         /// <summary>
         /// web.config文件配置名_事件处理名
