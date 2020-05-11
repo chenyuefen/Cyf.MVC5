@@ -40,5 +40,15 @@ namespace Cyf.MVC5
             //Response.Redirect
             //base.Context.RewritePath("/Home/Error?msg=")
         }
+
+        /// <summary>
+        /// web.config文件配置名_事件处理名
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void CustomHttpModuleCyf_ModuleHandler(object sender, EventArgs e)
+        {
+            this.logger.Info("this is CustomHttpModuleCyf_ModuleHandler");
+        }
     }
 }

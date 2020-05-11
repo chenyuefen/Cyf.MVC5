@@ -12,8 +12,15 @@ namespace Cyf.MVC5.Utility.PipeLine
             Console.WriteLine();
         }
 
+        public event EventHandler ModeuleHandler;
+
+
         public void Init(HttpApplication application)
         {
+            application.BeginRequest += (s, e) =>
+            {
+                this.ModeuleHandler?.Invoke(application, null);
+            };
             #region 为每一个事件，总共19个事件，都注册了一个动作，向客户端输出信息
             application.AcquireRequestState += (s, e) => application.Response.Write(string.Format("<h1 style='color:#00f'>来自MyCustomModule 的处理，{0}请求到达 {1}</h1><hr>", DateTime.Now.ToString(), "AcquireRequestState        "));
             application.AuthenticateRequest += (s, e) => application.Response.Write(string.Format("<h1 style='color:#00f'>来自MyCustomModule 的处理，{0}请求到达 {1}</h1><hr>", DateTime.Now.ToString(), "AuthenticateRequest        "));
