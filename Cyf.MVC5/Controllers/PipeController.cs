@@ -39,8 +39,14 @@ namespace Cyf.MVC5.Controllers
     ///  - Global是对httpmodule里面的事件注册动作
     ///  
     /// 
+    /// ************  Pipe HttpHandler : 主要针对链接后缀作处理  **************
+    /// 1 HttpHandler及扩展，自定义后缀，图片防盗链等
+    /// 2 RoutingModule,IRouteHandler、IHttpHandler
+    /// 3 MVC扩展Route，扩展HttpHandle
     /// 
-
+    /// 配置文件指定映射关系：后缀名与处理程序的关系(IHttpHandler---IHttpHandlerFactory)
+    /// Http任何一个请求一定是由某一个具体的Handler来处理的
+    /// 
     /// </summary>
     public class PipeController : Controller
     {
