@@ -79,6 +79,33 @@ namespace Cyf.MVC5.Controllers
     /// a 覆写的是FindView而不是CreateView(迟了),而且一定得set回去
     /// b CreateView时直接修改path(狠人)
     /// 注意不同的路径如_ViewStart
+    /// 
+    /// 
+    /// ************  Asp.Net六大内置对象：Response，Request，Application，Server，Session，Cookie  **************
+    /// Asp.Net有个大佬，HttpContext:http请求的上下文，任何一个环节其实都是需要httpcontext，需要的参数信息，处理的中间结果，最终的结果，都是放在httpcontext，是一个贯穿始终的对象
+    /// 所谓6大对象，其实就是HttpContext的属性
+    /// Request：url参数 form参数 url地址 urlreferer content-encoding，就是http请求提供的各种信息,后台里面都是可以拿到的context.Request.Headers["User-Agent"]；包括自定义的--BasicAuth; 请求信息的解读是asp.net_isapi按照http协议解析出来的
+    /// Response：响应， Response.Write   各种result扩展就是序列化+response，验证码；都是给客户端响应内容，除了body(json/html/file)，其实还有很多东西，各种header，反正都是交给浏览器去用的
+    /// Application：全局的东西，多个用户共享，  统计一下网站的请求数
+    /// Server：也就是个帮助类库
+    /// Session:用户登录验证，登录时写入，验证时获取；验证码；跳转当前页；一个用户一个Session，字典式
+    /// Cookie:用户登录验证，登录时写入，验证时获取；ValidateAntiForgeryToken；保存用户数据(记住账号；购物车；访问过那几个页面；)；一个用户一个Cookie,字典式；
+    /// 
+    /// 协议：就是一个约定，保证多方的信息传输(中文也是一种约定)
+    /// Http协议：超文本传输协议，也就是个文本传输的规范
+    ///           浏览器/客户端遵循；服务端也遵循，那么就可以发起交互了
+    /// 文本有啥：
+    /// 
+    /// cookie: 存在客户端--不能有敏感信息-推荐加密
+    ///         每次请求都提交--不能太大--jd多个域名
+    ///         可以存浏览器内存没有指定expiretime--关闭浏览器就丢失了
+    ///         想存在硬盘就指定expiretime---想清空就修改有效期--不会丢失
+    ///         同一个浏览器登陆覆盖的问题---一个浏览器cookie只有一个地方存储
+    ///         不同的浏览器登陆就不会覆盖----无痕模式是不会覆盖的
+    ///         
+    /// session：服务器内存(sessionstateserver/SQLServer)---体积不要太大，可以存敏感信息--重启丢失    
+    ///          一个用户一条，经常做传值(tempdata)
+    ///          负载均衡下session怎么处理？会话粘滞/session共享
     /// </summary>
     public class PipeController : Controller
     {
