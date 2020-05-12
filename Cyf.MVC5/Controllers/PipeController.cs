@@ -79,6 +79,9 @@ namespace Cyf.MVC5.Controllers
             //base.RouteData.Values //路由匹配后，获取的信息
             return View();
         }
-
+        public ActionResult Refuse()
+        {
+            return View();
+        }
     }
 }
