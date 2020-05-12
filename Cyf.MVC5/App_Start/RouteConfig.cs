@@ -49,6 +49,7 @@ namespace Cyf.MVC5
             //http://localhost:2017/test/Time_2019_06_13  失败的，只会被一个路由匹配
 
             routes.Add("chrome", new CustomRoute());
+            routes.Add("config", new Route("Cyf/{path}", new CustomMvcRouteHandler()));
 
             //常规路由,一般来说，我们不怎么扩展这个路由
             routes.MapRoute(

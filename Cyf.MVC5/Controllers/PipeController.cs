@@ -64,6 +64,10 @@ namespace Cyf.MVC5.Controllers
     /// MVC框架其实就是在Asp.Net管道上扩展的，在PostResolveCache事件扩展了UrlRoutingModule，
     /// 会在任何请求进来后，先进行路由匹配，如果匹配上了，就指定httphandler；没有匹配就还是走原始流程
     /// 
+    /// 
+    /// ************  扩展自定义路由Route  **************
+    /// 扩展自己的route，写入routecollection，可以自定义规则完成路由
+    /// 扩展httphandle，就可以为所欲为，跳出MVC框架
     /// </summary>
     public class PipeController : Controller
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
-
+using System.IO;
 namespace Cyf.MVC5.Utility.RouteExtend
 {
     public class CustomRoute : RouteBase
@@ -33,6 +33,26 @@ namespace Cyf.MVC5.Utility.RouteExtend
         public override VirtualPathData GetVirtualPath(RequestContext requestContext, RouteValueDictionary values)
         {
             return null;
+        }
+    }
+
+    public class CustomMvcRouteHandler : MvcRouteHandler
+    {
+        protected override IHttpHandler GetHttpHandler(RequestContext requestContext)
+        {
+            return new CustomHttpHandler();
+        }
+    }
+
+    public class CustomHttpHandler : IHttpHandler
+    {
+        public bool IsReusable => true;
+
+        public void ProcessRequest(HttpContext context)
+        {
+            context.Response.ContentType = "text/html";
+            context.Response.WriteFile(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Web.config"));
+            //看日志
         }
     }
 }
