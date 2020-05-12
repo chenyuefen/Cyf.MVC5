@@ -68,6 +68,17 @@ namespace Cyf.MVC5.Controllers
     /// ************  扩展自定义路由Route  **************
     /// 扩展自己的route，写入routecollection，可以自定义规则完成路由
     /// 扩展httphandle，就可以为所欲为，跳出MVC框架
+    /// 
+    /// 
+    /// ************  扩展View引擎：不同浏览器访问不同页面/PC,手机端不同页面/中英文网站  **************
+    /// FindView---变成了Engine的CreateView---使用构造里面的路径模型
+    /// 能做到的就是在不同的浏览器，用的是一套控制器，但是可以有不同的View
+    /// 中英文网站   手机/PC
+    /// 
+    /// 解决方案：
+    /// a 覆写的是FindView而不是CreateView(迟了),而且一定得set回去
+    /// b CreateView时直接修改path(狠人)
+    /// 注意不同的路径如_ViewStart
     /// </summary>
     public class PipeController : Controller
     {

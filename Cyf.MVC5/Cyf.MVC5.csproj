@@ -232,6 +232,7 @@
     <Compile Include="Utility\PipeLine\CustomRTMPHandler.cs" />
     <Compile Include="Utility\RouteExtend\CustomRoute.cs" />
     <Compile Include="Utility\UserManager.cs" />
+    <Compile Include="Utility\ViewExtend\CustomViewEngine.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -299,6 +300,34 @@
     <Content Include="Views\Pipe\Index.cshtml" />
     <Content Include="Views\Pipe\Handler.cshtml" />
     <Content Include="Views\Pipe\Refuse.cshtml" />
+    <Content Include="ChromeViews\_ViewStart.cshtml" />
+    <Content Include="ChromeViews\Fifth\Index.cshtml" />
+    <Content Include="ChromeViews\Fifth\Login.cshtml" />
+    <Content Include="ChromeViews\First\Index.cshtml" />
+    <Content Include="ChromeViews\First\IndexId.cshtml" />
+    <Content Include="ChromeViews\First\IndexIdNull.cshtml" />
+    <Content Include="ChromeViews\Fourth\Create.cshtml" />
+    <Content Include="ChromeViews\Fourth\Delete.cshtml" />
+    <Content Include="ChromeViews\Fourth\Details.cshtml" />
+    <Content Include="ChromeViews\Fourth\Edit.cshtml" />
+    <Content Include="ChromeViews\Fourth\Index.cshtml" />
+    <Content Include="ChromeViews\Home\About.cshtml" />
+    <Content Include="ChromeViews\Home\Contact.cshtml" />
+    <Content Include="ChromeViews\Home\Index.cshtml" />
+    <Content Include="ChromeViews\Pipe\Handler.cshtml" />
+    <Content Include="ChromeViews\Pipe\Index.cshtml" />
+    <Content Include="ChromeViews\Pipe\Refuse.cshtml" />
+    <Content Include="ChromeViews\Plugins\Index.cshtml" />
+    <Content Include="ChromeViews\Second\ChildAction.cshtml" />
+    <Content Include="ChromeViews\Second\Index.cshtml" />
+    <Content Include="ChromeViews\Second\PartialPage.cshtml" />
+    <Content Include="ChromeViews\Second\RazorExtend.cshtml" />
+    <Content Include="ChromeViews\Shared\_Layout.cshtml" />
+    <Content Include="ChromeViews\Shared\_LoginPartial.cshtml" />
+    <Content Include="ChromeViews\Shared\Error.cshtml" />
+    <Content Include="ChromeViews\Sixth\Index.cshtml" />
+    <Content Include="ChromeViews\Third\Index.cshtml" />
+    <Content Include="ChromeViews\Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

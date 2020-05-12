@@ -1,4 +1,5 @@
 using Cyf.MVC5.Utility;
+using Cyf.MVC5.Utility.ViewExtend;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,6 +23,8 @@ namespace Cyf.MVC5
 
             ControllerBuilder.Current.SetControllerFactory(new ControllerFactory());//注册自定义IOC工厂
 
+            ViewEngines.Engines.Set(new CustomViewEngine());//注册自定义视图引擎
+
             this.logger.Info("网站启动了。。。");
         }
 
@@ -30,16 +33,16 @@ namespace Cyf.MVC5
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        //protected void Application_Error(object sender, EventArgs e)
-        //{
-        //    Exception excetion = Server.GetLastError();
-        //    this.logger.Error($"{base.Context.Request.Url.AbsoluteUri}出现异常");
-        //    Response.Write("System is Error....");
-        //    Server.ClearError();
+        protected void Application_Error(object sender, EventArgs e)
+        {
+            Exception excetion = Server.GetLastError();
+            this.logger.Error($"{base.Context.Request.Url.AbsoluteUri}出现异常");
+            Response.Write("System is Error....");
+            Server.ClearError();
 
-        //    //Response.Redirect
-        //    //base.Context.RewritePath("/Home/Error?msg=")
-        //}
+            //Response.Redirect
+            //base.Context.RewritePath("/Home/Error?msg=")
+        }
 
         /// <summary>
         /// web.config文件配置名_事件处理名
